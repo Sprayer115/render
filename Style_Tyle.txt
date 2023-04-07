@@ -1,0 +1,36 @@
+1. Color Palette:
+   - Primary: #2D2D2D (dark gray)
+   - Secondary: #F2F2F2 (light gray)
+   - Accent: #FFC107 (yellow)
+   - Call-to-action: #FF5722 (orange)
+
+2. Typography:
+   - Headings: Montserrat (Bold)
+   - Sub-headings: Montserrat (Semi-Bold)
+   - Body Text: Open Sans (Regular)
+
+3. Logo:
+   - Simple, bold, and modern
+   - Icon: A stylized t-shirt or a combination of "T" and "S" (for T-Shirt Shop)
+   - Typography: Montserrat Bold
+
+4. Buttons:
+   - Rounded corners
+   - Call-to-action color for primary buttons (e.g. Add to Cart)
+   - Secondary color for secondary buttons (e.g. Wishlist)
+
+5. Imagery:
+   - High-quality product images on white backgrounds
+   - Lifestyle images showcasing t-shirts in everyday settings
+
+6. Icons:
+   - Simple, line-style icons for categories, cart, and user account
+
+7. Navigation:
+   - Clear, easy-to-read menu
+   - Search bar with a magnifying glass icon
+
+8. Grid Layout:
+   - Responsive design with a clean grid layout for product display
+
+Remember to adapt these suggestions to your brand identity and target audience.
