@@ -5,11 +5,9 @@
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.4.0",
     "@sailshq/connect-redis": "^3.2.1",
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
-    "fontawesome-free": "^1.0.4",
     "grunt": "1.0.4",
     "sails": "^1.5.4",
     "sails-hook-grunt": "^5.0.0",
