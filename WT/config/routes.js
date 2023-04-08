@@ -19,8 +19,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
-  '/home': {view: 'pages/home' },
+  '/': {view: 'pages/home' },
   '/test': {view: 'pages/test'},
   'GET /shirts': {api: 'controllers/shirt/crud@test'},
 
