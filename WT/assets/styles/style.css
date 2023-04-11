@@ -5,7 +5,19 @@
     body {
         background-color: yellowgreen;
     }
+    footer {
+        font-weight: bolder;
+        min-height: 6em;
+    }
+    .main-body {
+    }
+    .footer-text {
+    }
+    .head-bar {
+        font-weight: bolder !important;
+        font-size: 1em !important;
 
+    }
 }
 
 
@@ -16,7 +28,24 @@
 
 @media screen and (min-width: 960px) {
     body {
-        background-color: darkgreen;
+    }
+    footer {
+        min-height: 5em;
+        display: flex;
+        align-items: center;
+    }
+    .head-bar {
+        font-weight: bolder !important;
+    }
+    .footer-text {
+    }
+    .footer-text li {
+        display: inline-block;
+        float: Left;
+        width: 25%;
+        font-weight: normal;
+        font-size: large;
+        text-align: center;
     }
 
 }
@@ -25,9 +54,24 @@
 /* ################ General styles ############### */
 /* ############################################## */
 .icons {
-    color: darkgray;
+    color: black;
 }
 
 a {
-    color: gray
+    color: black
+}
+
+.main-body {
+    background-color: #FBFBE9;
+    display: flex;
+    flex-direction: column;
+}
+head {
+    background-color: #A7C5CB;
+}
+footer {
+    background-color: #A7C5CB;
+}
+.footer-text {
+    color: black;
 }

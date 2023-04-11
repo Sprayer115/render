@@ -32,6 +32,7 @@
             + Use a different or additional preprocessor, like SASS, SCSS or Stylus
     -->
   <!--STYLES-->
+  <link rel="stylesheet" href="/dependencies/bootstrap.min (1).css">
   <link rel="stylesheet" href="/dependencies/bootstrap.min.css">
   <link rel="stylesheet" href="/styles/importer.css">
   <link rel="stylesheet" href="/styles/style.css">
@@ -40,11 +41,11 @@
 
 </head>
 
-<body>
+<body class="main-body">
 
   <head>
-    <div>
-      <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="head-bar">
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary navbar-fixed-top navbar-f">
         <!-- Container wrapper -->
         <div>
           <!-- Toggle button -->
@@ -56,7 +57,7 @@
           <a class="navbar-brand center" href="/">T-Shirt Shirt</a>
         </div>
         <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse navbar-" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <a class="nav-link" href="/">Startseite</a>
@@ -66,7 +67,7 @@
                 aria-haspopup="true" aria-expanded="false">
                 Produkte
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Langarm</a>
                 <a class="dropdown-item" href="#">Ärmellos</a>
                 <a class="dropdown-item" href="#">Poloshirts</a>
@@ -94,14 +95,17 @@
             </a>
           </ul>
         </div>
-        <ul class="navbar-nav d-flex flex-row ">
-          <li class="nav-item me-3 me-lg-0">
-            <a class="nav-link" href="/cart"><i class="fa fa-shopping-cart icons fa-2x" aria-hidden="true"></i></a>
-          </li>
-          <li class="nav-item me-3 me-lg-0">
-            <a class="nav-link" href="/user"><i class="fa fa-user icons fa-2x" aria-hidden="true"></i>
-          </li>
-        </ul>
+        <div>
+          <ul class="navbar-nav d-flex flex-row ">
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="/cart"><i class="fa fa-shopping-cart icons fa-2x" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="/user"><i class="fa fa-user icons fa-2x" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </div>
+
     </div>
     </nav>
     </div>
@@ -110,21 +114,20 @@
     </div>
   </head>
   <%- body %>
-
   <footer>
-    <div style="text-align: center;">
-      <p>Rheingutstraße 32 78462 Konstanz 088888-8888888</p>
-      <p>
-        <li>
-          <a href="/Impressum">Impressum</a>
-        </li>
-        <li>
-          <a href="/Kontakt">Kontakt</a>
-        </li>
-        <li>
-          <a href="/AGB">AGB</a>
-        </li>
-      </p>
+    <div class="footer-text container-fluid">
+      <li>
+        <a href="/Impressum">Impressum</a>
+      </li>
+      <li>
+        <a href="/Kontakt">Kontakt</a>
+      </li>
+      <li>
+        <a href="/FAQ">FAQ</a>
+      </li>
+      <li>
+        <a href="/AGB">AGB</a>
+      </li>
     </div>
   </footer>
 
