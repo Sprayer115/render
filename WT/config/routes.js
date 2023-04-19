@@ -20,8 +20,14 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {view: 'pages/home' },
-  '/test': {view: 'pages/test'},
-  'GET /shirts': {api: 'controllers/shirt/crud@test'},
+  //'GET /shirts': {api: 'controllers/shirt/crud@test'},
+  'GET /admin/article/new': { view: 'pages/admin/article/new' },
+  'POST /admin/article': {controller: 'ArticleController', action: 'create'},
+  'GET /admin/article': 'ArticleController.find',
+  'GET /admin/article/show/:id': 'ArticleController.find',
+  'GET /admin/article/:id/delete': 'ArticleController.destroy',
+  'GET /admin/article/:id/edit': 'ArticleController.edit',
+  'POST /admin/article/:id/update': 'ArticleController.update'
 
 
   /***************************************************************************
