@@ -65,8 +65,8 @@ module.exports = {
     let shirts = await article.find({
         where: { price : {'<=' : params.filter['price']}},
         or: [
-            { name : {contains: params.search}},
-            { description : {contains: params.search}}
+            { name : { contains: params.search}},
+            { description : { contains: params.search}}
         ]
      })
     res.view('/pages/shirt/index', {shirts : shirts});
