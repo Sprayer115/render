@@ -33,7 +33,7 @@ module.exports.routes = {
 
   'GET /admin/variant/:id/new/': 'VariantController.new',
   'POST /admin/variant': 'VariantController.create',
-  'GET /admin/variant': 'VariantController.findForOne',
+  'GET /admin/variant/:id': 'VariantController.findForOne',
   'GET /admin/variant/show/:id': 'VariantController.findOne',
   'GET /admin/variant/:id/delete': 'VariantController.destroy',
   'GET /admin/variant/:id/edit': 'VariantController.edit',
@@ -41,7 +41,7 @@ module.exports.routes = {
 
   'GET /admin/size/:id/new': 'SizeController.new',
   'POST /admin/size': 'SizeController.create',
-  'GET /admin/size': 'SizeController.findForOne',
+  'GET /admin/size/:id': 'SizeController.findForOne',
   'GET /admin/size/show/:id': 'SizeController.findOne',
   'GET /admin/size/:id/delete': 'SizeController.destroy',
   'GET /admin/size/:id/edit': 'SizeController.edit',
