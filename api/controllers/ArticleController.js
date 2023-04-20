@@ -11,7 +11,7 @@ module.exports = {
 
   create: async function (req, res) {
     let params = req.allParams();
-    await Article.createEach([params]);
+    await Article.create(params);
     res.redirect('/admin/article')
   },
 
@@ -25,21 +25,21 @@ module.exports = {
   findOne: async function (req, res) {
     let article = await Article.findOne({
       id: req.params.id
-    }).populate('articleVariant').populate('articleVariant.articleVariantSize');
-    res.view('/pages/admin/article/index', {
+    }).populate('articleVariant').populate('articleVariant').populate('articleVariant.articleVariantSize');
+    res.view('/pages/admin/article/show', {
       article: article
     })
   },
   edit: async function (req, res) {
     let article = await Article.findOne({
       id: req.params.id
-    }).populate('articleVariant').populate('articleVariant.articleVariantSize');
+    }).populate('articleVariant');
     res.view('/pages/admin/article/edit', {
       article: article
     })
   },
   destroy: async function (req, res) {
-    let articles = await Article.destroy({
+    let article = await Article.destroy({
       id: req.params.id
     });
     res.redirect('/admin/article')

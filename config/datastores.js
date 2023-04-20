@@ -34,12 +34,12 @@ module.exports.datastores = {
   ***************************************************************************/
 
   default: {
-      /*adapter: 'sails-mysql',
-      host: 'localhost',
-      port: 3306,
-      user: 'wete',
-      password: 'wetepassword',
-      database: 'wete'*/
+    adapter: 'sails-mysql',
+    host: '193.196.53.194',
+    port: 33061,
+    user: 'user14_test',
+    password: '_116116',
+    database: 't_shirt_shirt_test'
     
 
     /***************************************************************************

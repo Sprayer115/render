@@ -1,0 +1,63 @@
+<!--<script>
+  var variants = 0;
+  let article = new JSON();
+  sizes = 0
+  // Add a variant
+  document.getElementById('addVariantBtn').addEventListener('click', function () {
+    let container = document.getElementById('variantsContainer');
+    let newVariant = document.createElement('div');
+    newVariant.innerHTML = `
+        <div>
+          <label for="variantName_${variants}">Variant Name:</label>
+          <input type="text" id="variantName_${variants}" name="variantName_${variants}" value="<%= article.variants[${variants}].name %>">
+          <label for="variantImagePath_${variants}">Bild Pfad:</label>
+          <input type="text" id="variantImagePath_${variants}" name="variantImagePath_${variants}" value="<%= article.variants[${variants}].image_path %>">
+          <label for="variantFilter_${variants}">Filter:</label>
+          <input type="text" id="variantFilter_${variants}" name="variantFilter_${variants}" value="<%= article.variants[${variants}].filter %>">
+        </div>
+        <div id="sizesContainer_${variants}">
+        </div>
+      `;
+    container.appendChild(newVariant);
+    variants++;
+  });
+
+  // Remove a variant
+  document.getElementById('removeVariantBtn').addEventListener('click', function () {
+    let container = document.getElementById('variantsContainer');
+    let removeVariant = document.getElementById('variantsContainer').lastChild;
+    container.removeChild(removeVariant);
+    variants--;
+  });
+
+  // Add a size
+  document.getElementById('addSizeBtn').addEventListener('click', function () {
+    let container = document.querySelectorAll('[id^="sizesContainer_"]')
+    container.forEach(function (el) {
+      let newSize = document.createElement('div');
+      newSize.innerHTML = `
+          <div>
+            <label for="variantSize_${el.id.replace('sizesContainer_', '')}_${sizes}">Variant Size:</label>
+            <input type="text" id="variantSizeName_${el.id.replace('sizesContainer_', '')}_${sizes}" name="variantSizeName_${el.id.replace('sizesContainer_', '')}_${sizes}" value="<%= article.variants[${el}].sizes[${sizes}].name %>">
+            <label for="variantStock_${el.id.replace('sizesContainer_', '')}_${sizes}">Variant Stock:</label>
+            <input type="number" id="variantSizeStock_${el.id.replace('sizesContainer_', '')}_${sizes}" name="variantSizeStock_${el.id.replace('sizesContainer_', '')}_${sizes}" value="<%= article.variants[${el}].sizes[${sizes}].stock %>">
+            <label for="variantFilter_${el.id.replace('sizesContainer_', '')}_${sizes}">Filter:</label>
+            <input type="text" id="variantSizeFilter_${el.id.replace('sizesContainer_', '')}_${sizes}" name="variantSizeFilter_${el.id.replace('sizesContainer_', '')}_${sizes}" value="<%= article.variants[${el}].sizes[${sizes}].filter %>">
+          </div>
+        `;
+      el.appendChild(newSize);
+    });
+    sizes++;
+  });
+
+  // Remove a size
+  document.getElementById('removeSizeBtn').addEventListener('click', function () {
+    let container = document.querySelectorAll('[id^="sizesContainer_"]')
+    container.forEach(function (el) {
+      let removeSize = el.lastChild;
+      el.removeChild(removeSize);
+    });
+    sizes--;
+  });
+
+</script> -->

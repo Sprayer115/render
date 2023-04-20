@@ -21,13 +21,31 @@ module.exports.routes = {
 
   '/': {view: 'pages/home' },
   //'GET /shirts': {api: 'controllers/shirt/crud@test'},
+
+
   'GET /admin/article/new': { view: 'pages/admin/article/new' },
-  'POST /admin/article': {controller: 'ArticleController', action: 'create'},
+  'POST /admin/article': 'ArticleController.create',
   'GET /admin/article': 'ArticleController.find',
-  'GET /admin/article/show/:id': 'ArticleController.find',
+  'GET /admin/article/show/:id': 'ArticleController.findOne',
   'GET /admin/article/:id/delete': 'ArticleController.destroy',
   'GET /admin/article/:id/edit': 'ArticleController.edit',
-  'POST /admin/article/:id/update': 'ArticleController.update'
+  'POST /admin/article/:id/update': 'ArticleController.update',
+
+  'GET /admin/variant/:id/new/': 'VariantController.new',
+  'POST /admin/variant': 'VariantController.create',
+  'GET /admin/variant': 'VariantController.findForOne',
+  'GET /admin/variant/show/:id': 'VariantController.findOne',
+  'GET /admin/variant/:id/delete': 'VariantController.destroy',
+  'GET /admin/variant/:id/edit': 'VariantController.edit',
+  'POST /admin/variant/:id/update': 'VariantController.update',
+
+  'GET /admin/size/:id/new': 'SizeController.new',
+  'POST /admin/size': 'SizeController.create',
+  'GET /admin/size': 'SizeController.findForOne',
+  'GET /admin/size/show/:id': 'SizeController.findOne',
+  'GET /admin/size/:id/delete': 'SizeController.destroy',
+  'GET /admin/size/:id/edit': 'SizeController.edit',
+  'POST /admin/size/:id/update': 'SizeController.update'
 
 
   /***************************************************************************
