@@ -58,7 +58,7 @@ module.exports = {
   },
   
   new: async function(req, res) {
-    sails.log.debug("Create variant....")
+    sails.log.debug("show create for new variant....")
     let article = req.params.id;
     res.view('pages/admin/variant/new', {article: article});
   }
