@@ -23,12 +23,12 @@ module.exports.routes = {
   //'GET /shirts': {api: 'controllers/shirt/crud@test'},
 
 
-  'GET /admin/article/new': { view: 'pages/admin/article/new' },
-  'POST /admin/article': 'ArticleController.create',
+  'GET /admin/article/new': { view: 'pages/admin/article/new' },//C
+  'POST /admin/article': 'ArticleController.create', 
   'GET /admin/article': 'ArticleController.find',
-  'GET /admin/article/show/:id': 'ArticleController.findOne',
-  'GET /admin/article/:id/delete': 'ArticleController.destroy',
-  'GET /admin/article/:id/edit': 'ArticleController.edit',
+  'GET /admin/article/show/:id': 'ArticleController.findOne', //R
+  'GET /admin/article/:id/delete': 'ArticleController.destroy',//D
+  'GET /admin/article/:id/edit': 'ArticleController.edit',//U
   'POST /admin/article/:id/update': 'ArticleController.update',
 
   'GET /admin/variant/:id/new/': 'VariantController.new',

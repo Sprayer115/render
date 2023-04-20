@@ -1,0 +1,39 @@
+Article - New/Create
+	- name - input text
+	- description - textarea
+	- price - input number
+	- filter - input text - placeholder "Polo;Kragen;"
+Article - Edit/update
+
+Article - Index - Liste 
+	- Delete button
+	- Detail button -> Into Edit
+
+Article - Read - Show
+	- mit Liste von Variants
+		- Delete button
+		- Detail button -> Into Edit
+		- mit Listen von Sizes
+			- Delete button
+			- Detail button -> Into Edit
+
+
+
+Variant - New/Create
+	- name 
+	- Image upload
+	- filter
+
+Variant - Edit/update
+	- image anzeigen / change
+
+
+
+Size - New/Create
+	- name 
+	- stock
+	- filter
+
+Variant - Edit/update
+
+
