@@ -13,7 +13,7 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
     name: { type: 'string', required: true },
-    image_path: { type: 'string', required: true },
+    image_path: { type: 'string', required: false },
     filter: { type: 'string', defaultsTo: ""},
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗

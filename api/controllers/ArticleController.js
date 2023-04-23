@@ -40,7 +40,7 @@ module.exports = {
     sails.log.debug("show edit for article....")
     let article = await Article.findOne({
       id: req.params.id
-    }).populate('articleVariant');
+    });
     res.view('pages/admin/article/edit', {
       article: article
     })
@@ -65,13 +65,15 @@ module.exports = {
     sails.log.debug("searching....")
     // possible filters : price and custom
     let params = req.allParams();
-    let shirts = await article.find({
-        where: { price : {'<=' : params.filter['price']}},
-        or: [
-            { name : { contains: params.search}},
-            { description : { contains: params.search}}
+    let shirts = await Article.find({
+        where : {price: { '<=': params.price},
+        or : [
+          { name : { contains: params.search}},
+          { description : { contains: params.search}}
         ]
-     })
-    res.view('pages/shirt/index', {shirts : shirts});
+      },
+        
+     });
+    res.view('pages/admin/article/index', {articles : shirts});
   }
 };

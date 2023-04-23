@@ -28,58 +28,82 @@
           <%= article.description %>
         </div>
       </div>
+      <div class="row">
+        <div class="col-2">
+          <h3>Varianten</h3>
+        </div>
 
+      </div>
       <% if(article.articleVariants) { %>
       <div>
-        <h3>Varianten</h3>
         <% article.articleVariants.forEach(function(variant){ %>
         <div class="row">
           <div class="col-2">
           </div>
           <div class="col-2">
             <h4>
-                <a href="/admin/variant/<%= variant.id %>/edit">
-                    <%= variant.name %>
-                </a>
+              <a href="/admin/variant/<%= variant.id %>/edit">
+                <%= variant.name %>
+              </a>
             </h4>
           </div>
           <div class="col-8">
             <span>
-                <a class="delete-button" href="/admin/variant/<%= variant.id %>/destroy">
-                    <i class="fa fa-trash icons" aria-hidden="true"></i>
-                </a>
+              <a class="delete-button" href="/admin/variant/<%= variant.id %>/destroy">
+                <i class="fa fa-trash icons" aria-hidden="true"></i>
+              </a>
             </span>
           </div>
           <div>
-              <% if(variant.variantSizes) { %>
-              <div>
-                <h5>Größen</h5>
-                <% variant.variantSizes.forEach(function(size){ %>
-                <div class="row">
-                  <div class="col-4"></div>
-                  <div class="col-2">
-                    <a class="show-button" href="/admin/size/<%= size.id %>/edit">
-                        <%= size.name %>
-                    </a>
-                  </div>
-                  <div class="col-2">
-                    <%= size.stock %>
-                  </div>
-                  <div class="col-4">
-                    <span>
-                        <a class="delete-button" href="/admin/size/<%= size.id %>/delete">
-                            <i class="fa fa-trash icons" aria-hidden="true"></i>
-                        </a>
-                    </span>
-                  </div>
-                </div>
-                <% }); %>
-              </div>
-              <% } %>
+
           </div>
-          <% }); %>
         </div>
-        <% } %>
+        <div class="sizes">
+          <div>
+            <h5>Größen</h5>
+          </div>
+
+          <% if(variant.variantSizes) { %>
+          <div>
+            <% variant.variantSizes.forEach(function(size){ %>
+            <div class="row">
+              <div class="col-4"></div>
+              <div class="col-2">
+                <a class="show-button" href="/admin/size/<%= size.id %>/edit">
+                  <%= size.name %>
+                </a>
+              </div>
+              <div class="col-2">
+                <%= size.stock %>
+              </div>
+              <div class="col-4">
+                <span>
+                  <a class="delete-button" href="/admin/size/<%= size.id %>/destroy">
+                    <i class="fa fa-trash icons" aria-hidden="true"></i>
+                  </a>
+                </span>
+              </div>
+            </div>
+            <% }); %>
+          </div>
+          <% } %>
+
+          <div class="row">
+            <div class="col-4">
+              <a class="add-button" href="/admin/size/<%= article.id %>/<%= variant.id %>/new">Größe Hinzufügen</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+    <% } %>
+    <div class="row">
+      <div class="col-4">
+        <a class="add-button" href="/admin/variant/<%= article.id %>/new">Variante Hinzufügen</a>
       </div>
     </div>
   </div>
+
+</div>
+</div>

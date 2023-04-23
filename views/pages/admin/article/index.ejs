@@ -1,6 +1,12 @@
 <div class="container">
     <h1>Artikel</h1>
-
+    <form action="/article/search" method="POST">
+        <label>Suche</label>
+        <input type="text" value="" length="20" name="search">
+        <label for="price">Preis unter:</label>
+        <input type="number" step="0.01" value="" name="price">
+        <button class="search-button" type="submit">Suchen</button>
+    </form>
     <div class="item-content">
         <table class="table">
             <thead>

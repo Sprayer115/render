@@ -12,26 +12,14 @@ const Sails = require("sails/lib/app/Sails");
 module.exports = {
 
     create: async function (req, res) {
+        sails.log.debug("create size");
         let params = req.allParams();
+        article = params.article;
+        sails.log.debug(article);
         await ArticleVariantSize.create(params);
-        res.redirect('/admin/variant/' . params.articleVariant)
+        res.redirect('/admin/article/' + article + "/show")
       },
     
-      findForOne: async function (req, res) {
-        let sizes = await ArticleVariantSize.find({ articleVariant: req.params.id });
-        res.view('pages/admin/size/index', {
-          sizes: sizes
-        })
-      },
-    
-      findOne: async function (req, res) {
-        let size = await ArticleVariantSize.findOne({
-          id: req.params.id
-        });
-        res.view('pages/admin/size/show', {
-          size: size
-        })
-      },
       edit: async function (req, res) {
         let size = await ArticleVariantSize.findOne({
           id: req.params.id
@@ -47,18 +35,23 @@ module.exports = {
         await ArticleVariantSize.destroy({
             id: req.params.id
         });
-        res.redirect('/admin/article/' . size.variant.article)
+        res.redirect('/admin/article/' + size.variant.article + "/show")
       },
       update: async function (req, res) {
         let params = req.allParams();
         await ArticleVariantSize.updateOne({
           id: req.params.id
         }).set(params);
-        res.redirect('/admin/article/' . params.articleVariant)
+
+        let size = await ArticleVariantSize.findOne({
+          id: req.params.id
+        }).populate('variant');
+        res.redirect('/admin/article/' + size.variant.article + "/show")
       },
       new: async function(req, res) {
         let article = req.params.id;
-        res.view('pages/admin/size/new', {article: article});
+        let variant = req.params.variant;
+        res.view('pages/admin/size/new', {article: article, variant: variant});
       }
 };
 

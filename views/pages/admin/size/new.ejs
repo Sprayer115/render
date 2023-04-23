@@ -1,20 +1,22 @@
-<form action="/admin/article" method="POST">
+<form action="/admin/size/" method="POST">
+  <div hidden>
+    <p>
+      <input type="number" id="article" name="article" value="<%= article %>">
+      <input type="number" id="variant" name="variant" value="<%= variant %>">
+    </p>
+  </div>
   <div>
-    <label for="name">Article Name:</label>
+    <label for="name">Größe:</label>
     <input type="text" id="name" name="name">
   </div>
   <div>
-    <label for="description">Article Description:</label>
-    <textarea id="description" name="description"></textarea>
-  </div>
-  <div>
-    <label for="price">Preis:</label>
-    <input type="number" id="price" name="price">
-  </div>
-  <div>
     <label for="description">Filter:</label>
-    <input type="text" id="filter" name="filter">
+    <input type="text" id="filter" name="filter" placeholder="M;">
   </div>
+  <div>
+    <label for="stock">Bestand</label>
+    <input type="number" name="stock" id="stock">
+</div>
   <div>
     <input type="submit" value="Submit">
   </div>
