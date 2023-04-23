@@ -27,7 +27,7 @@ module.exports = {
     article: {
       model: 'article'
     },
-    articleVariantSize: {
+    variantSizes: {
       collection: 'articleVariantSize',
       via: 'variant'
     }

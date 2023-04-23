@@ -12,10 +12,10 @@ Article - Index - Liste
 Article - Read - Show
 	- mit Liste von Variants
 		- Delete button
-		- Detail button -> Into Edit
+		- href auf name into edit
 		- mit Listen von Sizes
 			- Delete button
-			- Detail button -> Into Edit
+			- href auf name into edit
 
 
 

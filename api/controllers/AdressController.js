@@ -18,7 +18,7 @@ module.exports = {
 
   find: async function (req, res) {
     let articles = await Article.find();
-    res.view('/pages/admin/article/index', {
+    res.view('pages/admin/article/index', {
       articles: articles
     })
   },
@@ -27,7 +27,7 @@ module.exports = {
     let article = await Article.findOne({
       id: req.params.id
     }).populate('articleVariant').populate('articleVariant.articleVariantSize');
-    res.view('/pages/admin/article/index', {
+    res.view('pages/admin/article/index', {
       article: article
     })
   },
@@ -35,7 +35,7 @@ module.exports = {
     let article = await Article.findOne({
       id: req.params.id
     }).populate('articleVariant').populate('articleVariant.articleVariantSize');
-    res.view('/pages/admin/article/edit', {
+    res.view('pages/admin/article/edit', {
       article: article
     })
   },
@@ -63,7 +63,7 @@ module.exports = {
             { description : {contains: params.search}}
         ]
      })
-    res.view('/pages/shirt/index', {shirts : shirts});
+    res.view('pages/shirt/index', {shirts : shirts});
   }
 };
 

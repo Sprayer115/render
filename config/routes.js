@@ -26,25 +26,21 @@ module.exports.routes = {
   'GET /admin/article/new': { view: 'pages/admin/article/new' },//C
   'POST /admin/article': 'ArticleController.create', 
   'GET /admin/article': 'ArticleController.find',
-  'GET /admin/article/show/:id': 'ArticleController.findOne', //R
-  'GET /admin/article/:id/delete': 'ArticleController.destroy',//D
+  'GET /admin/article/:id/show': 'ArticleController.findOne', //R
+  'GET /admin/article/:id/destroy': 'ArticleController.destroy',//D
   'GET /admin/article/:id/edit': 'ArticleController.edit',//U
   'POST /admin/article/:id/update': 'ArticleController.update',
 
   'GET /admin/variant/:id/new/': 'VariantController.new',
   'POST /admin/variant': 'VariantController.create',
-  'GET /admin/variant/:id': 'VariantController.findForOne',
-  'GET /admin/variant/show/:id': 'VariantController.findOne',
-  'GET /admin/variant/:id/delete': 'VariantController.destroy',
+  'GET /admin/variant/:id/destroy': 'VariantController.destroy',
   'GET /admin/variant/:id/edit': 'VariantController.edit',
   'POST /admin/variant/:id/update': 'VariantController.update',
 
   'GET /admin/size/:id/new': 'SizeController.new',
   'POST /admin/size': 'SizeController.create',
-  'GET /admin/size/:id': 'SizeController.findForOne',
-  'GET /admin/size/show/:id': 'SizeController.findOne',
-  'GET /admin/size/:id/delete': 'SizeController.destroy',
-  'GET /admin/size/:id/edit': 'SizeController.edit',
+  'GET /admin/size/:id/destroy': 'SizeController.destroy',
+  'GET /admin/size/:id/:variant/edit': 'SizeController.edit',
   'POST /admin/size/:id/update': 'SizeController.update'
 
 

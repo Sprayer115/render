@@ -19,17 +19,20 @@ module.exports = {
   find: async function (req, res) {
     sails.log.debug("get all articles....")
     let articles = await Article.find();
-    res.view('/pages/admin/article/index', {
-      articles: articles
-    })
+    res.view ('pages/admin/article/index', { articles: articles } );
   },
 
   findOne: async function (req, res) {
     sails.log.debug("search specific article....")
     let article = await Article.findOne({
       id: req.params.id
-    }).populate('articleVariant').populate('articleVariant').populate('articleVariant.articleVariantSize');
-    res.view('/pages/admin/article/show', {
+    }).populate('articleVariants');
+    // cross joining not supported by framework
+    for (let [index, variant] of article.articleVariants.entries()) {
+      let sizes = await ArticleVariantSize.find({variant: variant.id});
+      article.articleVariants[index].variantSizes = sizes;
+    }
+    res.view('pages/admin/article/show', {
       article: article
     })
   },
@@ -38,7 +41,7 @@ module.exports = {
     let article = await Article.findOne({
       id: req.params.id
     }).populate('articleVariant');
-    res.view('/pages/admin/article/edit', {
+    res.view('pages/admin/article/edit', {
       article: article
     })
   },
@@ -69,6 +72,6 @@ module.exports = {
             { description : { contains: params.search}}
         ]
      })
-    res.view('/pages/shirt/index', {shirts : shirts});
+    res.view('pages/shirt/index', {shirts : shirts});
   }
 };

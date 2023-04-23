@@ -19,7 +19,7 @@ module.exports = {
 
   findForOne: async function (req, res) {
     let variants = await ArticleVariant.find({ article: req.params.id });
-    res.view('/pages/admin/variant/index', {
+    res.view('pages/admin/variant/index', {
       variants: variants
     })
   },
@@ -28,7 +28,7 @@ module.exports = {
     let variant= await ArticleVariant.findOne({
       id: req.params.id
     });
-    res.view('/pages/admin/variant/show', {
+    res.view('pages/admin/variant/show', {
       variant: variant
     })
   },
@@ -36,7 +36,7 @@ module.exports = {
     let variant = await ArticleVariant.findOne({
       id: req.params.id
     });
-    res.view('/pages/admin/variant/edit', {
+    res.view('pages/admin/variant/edit', {
       variant: variant
     })
   },

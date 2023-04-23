@@ -19,7 +19,7 @@ module.exports = {
     
       findForOne: async function (req, res) {
         let sizes = await ArticleVariantSize.find({ articleVariant: req.params.id });
-        res.view('/pages/admin/size/index', {
+        res.view('pages/admin/size/index', {
           sizes: sizes
         })
       },
@@ -28,7 +28,7 @@ module.exports = {
         let size = await ArticleVariantSize.findOne({
           id: req.params.id
         });
-        res.view('/pages/admin/size/show', {
+        res.view('pages/admin/size/show', {
           size: size
         })
       },
@@ -36,18 +36,18 @@ module.exports = {
         let size = await ArticleVariantSize.findOne({
           id: req.params.id
         });
-        res.view('/pages/admin/size/edit', {
+        res.view('pages/admin/size/edit', {
           size: size
         })
       },
       destroy: async function (req, res) {
         let size = await ArticleVariantSize.findOne({
           id: req.params.id
-        });
+        }).populate('variant');
         await ArticleVariantSize.destroy({
             id: req.params.id
         });
-        res.redirect('/admin/article/' . size.articleVariant)
+        res.redirect('/admin/article/' . size.variant.article)
       },
       update: async function (req, res) {
         let params = req.allParams();
