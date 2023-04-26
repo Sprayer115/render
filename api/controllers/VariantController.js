@@ -13,7 +13,7 @@ module.exports = {
 
   create: async function (req, res) {
     sails.log.debug("creating variant");
-    req.file('image').upload({
+    /*req.file('image').upload({
       // don't allow the total upload size to exceed ~10MB
       maxBytes: 10000000,
       dirname: require('path').resolve(sails.config.appPath, 'assets/images')
@@ -23,7 +23,7 @@ module.exports = {
         params.image_path = fname
         await ArticleVariant.create(params);
         res.redirect('/admin/article/' + params.article + "/show")
-    });
+    }); */
     let params = req.allParams();
     params.image_path = "";
     await ArticleVariant.create(params);

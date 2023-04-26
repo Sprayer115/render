@@ -197,3 +197,7 @@ footer {
     color: #000000;
     background: #A1A6B4
 }
+
+.right {
+    text-align: right;
+}

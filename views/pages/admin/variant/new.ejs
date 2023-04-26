@@ -1,23 +1,23 @@
 <form action="/admin/variant/" method="POST">
   <div hidden>
     <p>
-      <input type="number" id="article" name="article" value="<%= article %>">
+      <input type="number" id="article" name="article" value="<%= article %>" required>
     </p>
   </div>
   <div>
     <label for="name">Varianten Name:</label>
-    <input type="text" id="name" name="name">
+    <input type="text" id="name" name="name" required>
   </div>
   <div>
     <label for="description">Filter:</label>
-    <input type="text" id="filter" name="filter" placeholder="blue;">
+    <input type="text" id="filter" name="filter" placeholder="blue;" required>
   </div>
   <div>
     <label for="image">Bild hochladen</label>
     <input type="file" class="form-control" name="image" id="image">
 </div>
   <div>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Anlegen">
   </div>
 </form>
 

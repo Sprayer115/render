@@ -1,24 +1,24 @@
 <form action="/admin/size/" method="POST">
   <div hidden>
     <p>
-      <input type="number" id="article" name="article" value="<%= article %>">
-      <input type="number" id="variant" name="variant" value="<%= variant %>">
+      <input type="number" id="article" name="article" value="<%= article %>" required>
+      <input type="number" id="variant" name="variant" value="<%= variant %>" required>
     </p>
   </div>
   <div>
     <label for="name">Größe:</label>
-    <input type="text" id="name" name="name">
+    <input type="text" id="name" name="name" required>
   </div>
   <div>
     <label for="description">Filter:</label>
-    <input type="text" id="filter" name="filter" placeholder="M;">
+    <input type="text" id="filter" name="filter" placeholder="M;" required>
   </div>
   <div>
     <label for="stock">Bestand</label>
-    <input type="number" name="stock" id="stock">
+    <input type="number" min=0 name="stock" id="stock" required>
 </div>
   <div>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Anlegen">
   </div>
 </form>
 

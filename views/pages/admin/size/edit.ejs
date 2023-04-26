@@ -1,15 +1,15 @@
 <form action="/admin/size/<%= size.id %>/update" method="POST">
     <div>
       <label for="name">Größe:</label>
-      <input type="text" id="name" name="name" value="<%= size.name %>">
+      <input type="text" id="name" name="name" value="<%= size.name %>" required>
     </div>
     <div>
       <label for="description">Filter:</label>
-      <input type="text" id="filter" name="filter" placeholder="M;" value="<%= size.filter %>">
+      <input type="text" id="filter" name="filter" placeholder="M;" value="<%= size.filter %>" required>
     </div>
     <div>
       <label for="stock">Bestand</label>
-      <input type="number" name="stock" id="stock" value="<%= size.stock %>">
+      <input type="number" name="stock" min=0 id="stock" value="<%= size.stock %>" required>
   </div>
     <div>
       <input type="submit" value="Submit">

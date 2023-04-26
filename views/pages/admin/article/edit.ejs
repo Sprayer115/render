@@ -2,35 +2,25 @@
   <div>
     <label for="name">Artikelname:</label>
     <br>
-    <input type="text" id="name" name="name" value="<%= article.name %>">
+    <input type="text" id="name" name="name" value="<%= article.name %>" required>
   </div>
   <div>
     <label for="description">Artikelbeschreibung:</label>
     <br>
-    <textarea id="description" name="description"><%= article.description %></textarea>
+    <textarea id="description" name="description" required><%= article.description %></textarea>
   </div>
   <div>
     <label for="price">Preis:</label>
     <br>
-    <input type="number" id="price" step=0.01 name="price" value="<%= article.price %>">
+    <input type="number" id="price" min=0.01 step=0.01 name="price" required value="<%= article.price %>">
   </div>
   <div>
     <label for="description">Filter:</label>
     <br>
-    <input type="text" id="filter" name="filter" value="<%= article.filter %>" placeholder="baumwolle;polo;">
+    <input type="text" id="filter" name="filter" required value="<%= article.filter %>" placeholder="baumwolle;polo;">
   </div>
   <br>
-  <form>
-    <div class="form">
-        <input name="file_upload" id="entry_value" ref="fileInput" type="file"  onchange="getFileName()">
-        <div>     
-            <img src="/images/upload.png" alt="upload" width="7%" class="mx-2">
-                Upload your files here or 
-            <button class="btn bg-color-dblue btn-primary px-4 py-3" href="/admin/article/<%= article.id %>/getFileName">Browse</button></div>
-        <span id="fileName" class="text-primary ">
-        </span>
-    </div>
-</form>  
+  
   <div>
     <br>
     <input type="submit" value="Submit">

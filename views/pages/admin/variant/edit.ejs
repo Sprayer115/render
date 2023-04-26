@@ -1,11 +1,11 @@
 <form action="/admin/variant/<%= variant.id %>/update" method="POST">
     <div>
       <label for="name">Varianten Name:</label>
-      <input type="text" id="name" name="name" value="<%= variant.name %>">
+      <input type="text" id="name" name="name" required value="<%= variant.name %>">
     </div>
     <div>
       <label for="description">Filter:</label>
-      <input type="text" id="filter" name="filter" placeholder="blue;" value="<%= variant.filter %>">
+      <input type="text" id="filter" name="filter" placeholder="blue;" required value="<%= variant.filter %>">
     </div>
     <div>
         <label for="image">Bild hochladen</label>
@@ -15,6 +15,18 @@
       <input type="submit" value="Submit">
     </div>
   </form>
+
+<form>
+    <div class="form">
+        <input name="file_upload" id="entry_value" ref="fileInput" type="file"  onchange="getFileName()">
+        <div>     
+            <img src="/images/upload.png" alt="upload" width="7%" class="mx-2">
+                Upload your files here or 
+            <button class="btn bg-color-dblue btn-primary px-4 py-3" href="/admin/article/<%= article.id %>/getFileName">Browse</button></div>
+        <span id="fileName" class="text-primary ">
+        </span>
+    </div>
+</form>  
   
   
   
