@@ -3,7 +3,10 @@
 /* ############################################## */
 @media screen and (min-width: 350px) {
     body {
-        background-color: yellowgreen;
+        background-color: #F8F8F8;
+    }
+    .category-item{
+        padding-bottom: 5em;
     }
     footer {
         font-weight: bolder;
@@ -14,6 +17,7 @@
     .footer-text {
     }
     .head-bar {
+        background-color: #B4D2E7;
         font-weight: bolder !important;
         font-size: 1em !important;
     }
@@ -35,12 +39,20 @@
 /* ############################################## */
 
 @media screen and (min-width: 960px) {
+    html{ height:100%; }
+    body{
+        background-size: cover;
+        background-attachment: fixed;
+
+        
+    }
     .category-box {
         display: flex;
         flex-flow: row wrap;
         background-color: white;
-
         justify-content: space-around;
+        /*display: flex;
+        position: fixed; /* Für damit der Footer unten bleibt, muss aber dann überall angepasst werden (siehe footer)  */
     }
     .category-item {
         margin: 0.5em 0 0.5em 0;
@@ -106,6 +118,7 @@
         min-height: 5em;
         display: flex;
         align-items: center;
+
     }
     .head-bar {
         font-weight: bolder !important;
@@ -122,7 +135,7 @@
     }
     .welcome-text {
         width: 70%;
-        background-color: #EFEFDF;
+        background-color: #A1A6B4;
         padding: 1em;
     }
     .welcome-text h3 {
@@ -148,15 +161,19 @@ a {
 }
 
 .main-body {
-    background-color: #FBFBE9;
+    background-color: #F8F8F8;
     display: flex;
     flex-direction: column;
 }
 head {
-    background-color: #A7C5CB;
+    background-color: #B4D2E7;
+
 }
 footer {
-    background-color: #A7C5CB;
+    background-color: #B4D2E7;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 .footer-text {
     color: black;
@@ -164,4 +181,19 @@ footer {
 
 .sizes {
     margin-left: 2em;
+}
+.search-button{
+    width: 97px;
+    height: 33px;
+    font-size: 20px;
+    color: #000000;
+    background: #94C5CC;
+    border: none;
+    border-radius: 10px;
+    font-family: arial;
+    transition: all 0.25s ease;
+}
+.search-button:hover {
+    color: #000000;
+    background: #A1A6B4
 }

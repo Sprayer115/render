@@ -30,6 +30,7 @@ module.exports.routes = {
   'GET /admin/article/:id/destroy': 'ArticleController.destroy',//D
   'GET /admin/article/:id/edit': 'ArticleController.edit',//U
   'POST /admin/article/:id/update': 'ArticleController.update',
+  'GET /admin/article/:id/GetFileName': 'ArticleController.getFileName',
 
   'GET /admin/variant/:id/new/': 'VariantController.new',
   'POST /admin/variant': 'VariantController.create',

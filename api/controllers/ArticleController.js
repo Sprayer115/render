@@ -60,6 +60,12 @@ module.exports = {
     }).set(params);
     res.redirect('/admin/article')
   },
+  getFileName: async function () /*Funktion aus edit Pic upload */
+  {
+    sails.log.debug("getting Filename....")
+    var x = document.getElementById('entry_value')
+    document.getElementById('fileName').innerHTML = x.value.split('\\').pop()
+  },
 
   search: async function (req, res) {
     sails.log.debug("searching....")
