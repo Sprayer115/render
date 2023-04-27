@@ -17,6 +17,20 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+  '*': 'is-logged-in',
 
+  // Bypass the `is-logged-in` policy for:
+  'entrance/*': true,
+  'account/logout': true,
+
+  ArticleController: {
+    '*': 'is-super-admin',
+  },
+
+  VariantController: {
+    '*': 'is-super-admin',
+  },
+  SizeController: {
+    '*': 'is-super-admin',
+  }
 };

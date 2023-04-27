@@ -37,9 +37,9 @@ module.exports.datastores = {
     adapter: 'sails-mysql',
     host: '193.196.53.194',
     port: 33061,
-    user: 'user14_prod',
-    password: '_100116',
-    database: 't_shirt_shirt_prod'
+    user: 'user14_test',
+    password: '_116116',
+    database: 't_shirt_shirt_test'
     
 
     /***************************************************************************
