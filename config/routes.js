@@ -44,7 +44,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': { view: 'pages/homepage' },
+  '/': { view: 'pages/home' },
   'GET /admin/article/new': { view: 'pages/admin/article/new' },//C
 
 
