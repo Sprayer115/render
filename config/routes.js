@@ -78,6 +78,9 @@ module.exports.routes = {
   'POST /admin/size': 'SizeController.create',
   'GET /admin/size/:id/destroy': 'SizeController.destroy',
   'GET /admin/size/:id/edit': 'SizeController.edit',
-  'POST /admin/size/:id/update': 'SizeController.update'
+  'POST /admin/size/:id/update': 'SizeController.update',
+
+  'GET /api/basket': {  action:'api/basket/get' },
+  'POST /api/basket': {  action:'api/basket/add' },
   
 };
