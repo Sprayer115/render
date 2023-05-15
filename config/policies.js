@@ -23,6 +23,7 @@ module.exports.policies = {
   'entrance/*': true,
   'account/logout': true,
 
+
   ArticleController: {
     '*': 'is-super-admin',
   },

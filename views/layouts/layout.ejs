@@ -46,7 +46,13 @@
 </head>
 
 <body class="main-body">
-
+  <!--SCRIPTS-->
+  <script src="/dependencies/sails.io.js"></script>
+  <script src="/dependencies/bootstrap.bundle.min.js"></script>
+  <!-- <script src="/dependencies/vue-router.global.js"></script> -->
+  <script src="/dependencies/vue.global.js"></script>
+  <script src="/dependencies/vuetify.min.js"></script>
+  <!--SCRIPTS END-->
   <head>
     <div class="head-bar">
       <nav class="navbar navbar-expand-lg navbar-light bg-primary navbar-fixed-top navbar-f">
@@ -94,8 +100,6 @@
                 <a class="dropdown-item" style="color:red;" href="#">Bestellungen</a>
               </div>
             </li>
-
-
             </a>
           </ul>
         </div>
@@ -104,9 +108,21 @@
             <li class="nav-item me-3 me-lg-0">
               <a class="nav-link" href="/cart"><i class="fa fa-shopping-cart icons fa-2x" aria-hidden="true"></i></a>
             </li>
+            <% if(req.me) { %>
             <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link" href="/user"><i class="fa fa-user icons fa-2x" aria-hidden="true"></i></a>
+              <a class="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <% req.me.name %>
+              </a>
+              <ul class="dropdown-menu">
+                <a class="dropdown-item" href="/account">Account</a>
+                <a class="dropdown-item" href="/logout">Abmelden</a>
+              </ul>
             </li>
+            <% } else { %>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="/login"><i class="fa fa-user icons fa-2x" aria-hidden="true"></i></a>
+            </li>
+            <% } %>
           </ul>
         </div>
 

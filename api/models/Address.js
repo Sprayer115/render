@@ -18,7 +18,6 @@ module.exports = {
     street_no: { type: 'string', required: true },
     zip: { type: 'string', required: true},
     city: { type: 'string', required: true},
-    user_id: { type: 'number', columnType: 'INTEGER', required: true}
     
 
 
@@ -30,7 +29,9 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-
+    user: {
+      model: 'user'
+    },
   },
 
 };

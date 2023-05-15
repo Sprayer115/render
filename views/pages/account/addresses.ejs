@@ -1,0 +1,42 @@
+<div class="container"> 
+    <div class="item-content">
+        <table class="table">
+            <thead>
+                    <th class="text-left">
+                        #
+                    </th>
+                    <th class="text-left">
+                        Name
+                    </th>
+                    <th class="text-left">
+                        Straße
+                    </th>
+                    <th class="text-left">
+                        Stadt
+                    </th>
+            </thead>
+            <tbody>
+                <% addresses.forEach(function(address){ %>
+                    <tr>
+                        <td>
+                            <a class="show-button" href="/account/address/<%= address.id %>/show">
+                                <%= address.id %>
+                            </a>
+                        </td>
+                        <td>
+                            <%= address.firstname + " " + address.lastname %>
+                        </td>
+                        <td>
+                            <%= address.street + " " + address.street_no %>
+                        </td>
+                        <td>
+                            <%= address.city + " " + address.zip %>
+                        </td>
+                        <td> <a class="delete-button" href="/account/address/<%= article.id %>/destroy"><i class="fa fa-trash icons" aria-hidden="true"></i></a></td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+        <a class="add-button" href="/account/address-create"><b>Adresse Hinzufügen</b></a>
+    </div>
+</div>

@@ -5,11 +5,11 @@
     <hr/>
     <div class="row mb-3">
       <div class="col-sm-6">
-        <h4>Personal information</h4>
+        <h4>Persönliche Informationen</h4>
       </div>
       <div class="col-sm-6">
         <span class="float-sm-right">
-          <a style="width: 150px" class="btn btn-sm btn-outline-info" href="/account/profile">Edit profile</a>
+          <a style="width: 150px" class="btn btn-sm btn-outline-info" href="/account/profile">Account bearbeiten</a>
         </span>
       </div>
     </div>
@@ -18,7 +18,7 @@
       <div class="col"><strong><%= req.me.fullName %></strong></div>
     </div>
     <div class="row">
-      <div class="col-3">Email:</div>
+      <div class="col-3">E-mail:</div>
       <div class="col">
         <strong><%= req.me.emailAddress %></strong>
       </div>
@@ -26,17 +26,29 @@
     <hr/>
     <div class="row mb-3">
       <div class="col-sm-6">
-        <h4>Password</h4>
+        <h4>Passwort</h4>
       </div>
       <div class="col-sm-6">
         <span class="float-sm-right">
-          <a style="width: 150px" class="btn btn-sm btn-outline-info" href="/account/password">Change password</a>
+          <a style="width: 150px" class="btn btn-sm btn-outline-info" href="/account/password">Passwort ändern</a>
         </span>
       </div>
     </div>
     <div class="row">
-      <div class="col-3">Password:</div>
+      <div class="col-3">Passwort:</div>
       <div class="col"><strong>••••••••••</strong></div>
+    </div>
+    <hr/>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>Adressen</h4>
+      </div>
+      <div class="col-sm-6">
+        <span class="float-sm-right">
+          <a style="width: 150px" class="btn btn-sm btn-outline-info" href="/account/addresses">Adressen Anzeigen</a>
+        </span>
+      </div>
     </div>    
 </div>
 <%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
