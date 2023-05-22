@@ -76,6 +76,7 @@ module.exports.routes = {
   'GET /admin/variant/:id/destroy': 'VariantController.destroy',
   'GET /admin/variant/:id/edit': 'VariantController.edit',
   'POST /admin/variant/:id/update': 'VariantController.update',
+  'POST /admin/variant/:id/upload': 'VariantController.upload',
 
   'GET /admin/size/:id/:variant/new': 'SizeController.new',
   'POST /admin/size': 'SizeController.create',
