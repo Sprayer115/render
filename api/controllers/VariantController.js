@@ -85,8 +85,8 @@ module.exports = {
         return res.json({status: 500, error: err});  
       }       
       sails.log(files);
-      //await Sleep(3000);
-      //TODO: make function take longer for storage time
+      sails.log("make a pause")
+     //TODO: take care of reload picture problem and picture refresh
       res.redirect('/admin/variant/' + req.params.id + "/edit");
      });
    }
