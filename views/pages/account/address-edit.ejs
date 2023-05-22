@@ -1,0 +1,36 @@
+<div class="container pt-5 pb-5">
+  <form action="/account/address/<%= address.id %>" method="POST">
+    <div>
+      <label class="col-form-label-lg" for="firstname">Vorname:</label>
+      <input class="form-control" type="text" id="firstname" name="firstname" value=<%= address.firstname %> required>
+    </div>
+    <div>
+      <label class="col-form-label-lg" for="lastname">Nachname:</label>
+      <input class="form-control" type="text" id="lastname" name="lastname" value=<%= address.lastname %> required>
+    </div>
+    <div>
+      <label class="col-form-label-lg" for="street">Straße:</label>
+      <input class="form-control" type="text" id="street" name="street" value=<%= address.street %> required>
+    </div>
+    <div>
+      <label class="col-form-label-lg" for="street_no">Hausnummer:</label>
+      <input class="form-control" type="text" id="street_no" name="street_no" value=<%= address.street_no %> required>
+    </div>
+    <div>
+      <label class="col-form-label-lg" for="city">Stadt:</label>
+      <input class="form-control" type="text" id="city" name="city" value=<%= address.city %> required>
+    </div>
+    <div>
+      <label class="col-form-label-lg" for="zip">PLZ:</label>
+      <input class="form-control" type="text" id="zip" name="zip" value=<%= address.zip %> required>
+    </div>
+    <br>
+    <div>
+      <input class="form-control" type="submit" value="Anlegen">
+    </div>
+  </form>
+</div>
+
+  
+  
+  

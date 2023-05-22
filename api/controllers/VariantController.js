@@ -86,7 +86,7 @@ module.exports = {
       }       
       sails.log(files);
       //await Sleep(3000);
-      //make function take longer for storage time
+      //TODO: make function take longer for storage time
       res.redirect('/admin/variant/' + req.params.id + "/edit");
      });
    }

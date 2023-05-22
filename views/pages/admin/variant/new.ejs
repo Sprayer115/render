@@ -1,4 +1,4 @@
-<form action="/admin/variant/" method="POST">
+<form name="variant" onsubmit="return validateVariant()" action="/admin/variant/" method="POST">
   <div hidden>
     <p>
       <input type="number" id="article" name="article" value="<%= article %>" required>

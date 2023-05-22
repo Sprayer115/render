@@ -1,4 +1,4 @@
-<form action="/admin/variant/<%= variant.id %>/update" method="POST">
+<form name="variant" onsubmit="return validateVariant()" action="/admin/variant/<%= variant.id %>/update" method="POST">
     <div>
       <label for="name">Varianten Name:</label>
       <input type="text" id="name" name="name" required value="<%= variant.name %>">
