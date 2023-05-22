@@ -1,24 +1,35 @@
+<div class="container pt-5 pb-5">
+
 <form action="/account/address" method="POST">
     <div>
-      <label for="name">Article Name:</label>
-      <input type="text" id="name" name="name" required>
+      <label class="col-form-label-lg" for="firstname">Vorname:</label>
+      <input class="form-control" type="text" id="firstname" name="firstname" required>
     </div>
     <div>
-      <label for="description">Article Description:</label>
-      <textarea id="description" name="description" required></textarea>
+      <label class="col-form-label-lg" for="lastname">Nachname:</label>
+      <input class="form-control" type="text" id="lastname" name="lastname" required>
     </div>
     <div>
-      <label for="price">Preis:</label>
-      <input type="number" id="price" min=0.01 step=0.01 name="price" required>
+      <label class="col-form-label-lg" for="street">Straße:</label>
+      <input class="form-control" type="text" id="street" name="street" required>
     </div>
     <div>
-      <label for="description">Filter:</label>
-      <input type="text" id="filter" name="filter" placeholder="baumwolle;polo;" required>
+      <label class="col-form-label-lg" for="street_no">Hausnummer:</label>
+      <input class="form-control" type="text" id="street_no" name="street_no" required>
     </div>
     <div>
-      <input type="submit" value="Anlegen">
+      <label class="col-form-label-lg" for="city">Stadt:</label>
+      <input class="form-control" type="text" id="city" name="city" required>
+    </div>
+    <div>
+      <label class="col-form-label-lg" for="zip">PLZ:</label>
+      <input class="form-control" type="text" id="zip" name="zip" required>
+    </div>
+    <br>
+    <div>
+      <input class="form-control" type="submit" value="Anlegen">
     </div>
   </form>
-  
+</div>
   
   

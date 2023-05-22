@@ -41,3 +41,19 @@ function validateSize() {
       return false;
     }
   }
+
+  function validateVariant() {
+    if(document.forms["variant"]["name"].value == ""){
+      alert("Name muss ausgefüllt sein");
+      return false;
+    }
+    if(document.forms["variant"]["article"].value > 0){
+      alert("Artikel Bezug muss gesetzt sein, im Zweifel Seite neu aufrufen");
+      return false;
+    }
+    let filter = document.forms["variant"]["filter"].value;
+    if(filter != "" && !filter.endsWith(";")){
+      alert("Filter muss mit einem ';' enden");
+      return false;
+    }
+  }

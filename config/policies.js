@@ -27,6 +27,9 @@ module.exports.policies = {
   ArticleController: {
     '*': 'is-super-admin',
   },
+  AddressController: {
+    '*': 'is-logged-in',
+  },
 
   VariantController: {
     '*': 'is-super-admin',

@@ -19,7 +19,7 @@
                 <% addresses.forEach(function(address){ %>
                     <tr>
                         <td>
-                            <a class="show-button" href="/account/address/<%= address.id %>/show">
+                            <a class="show-button" href="/account/address/<%= address.id %>">
                                 <%= address.id %>
                             </a>
                         </td>
@@ -32,11 +32,11 @@
                         <td>
                             <%= address.city + " " + address.zip %>
                         </td>
-                        <td> <a class="delete-button" href="/account/address/<%= article.id %>/destroy"><i class="fa fa-trash icons" aria-hidden="true"></i></a></td>
+                        <td> <a class="delete-button" href="/account/address/<%= address.id %>/destroy"><i class="fa fa-trash icons" aria-hidden="true"></i></a></td>
                     </tr>
                     <% }); %>
             </tbody>
         </table>
-        <a class="add-button" href="/account/address-create"><b>Adresse Hinzufügen</b></a>
+        <a class="add-button" href="/account/address/new"><b>Adresse Hinzufügen</b></a>
     </div>
 </div>

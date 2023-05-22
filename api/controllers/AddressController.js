@@ -14,8 +14,11 @@ module.exports = {
     sails.log.debug("create new address....")
     let params = req.allParams();
     params.user = req.me.id;
+    if(params.user == null) {
+      return res.redirect('/login');
+    }
     await Address.create(params);
-    res.redirect('/account/addresses')
+    res.redirect('/account/address')
   },
 
   find: async function (req, res) {
@@ -23,46 +26,47 @@ module.exports = {
     let addresses = await Address.find({
       where : {user: req.me.id}
     });
-    res.view ('pages/account/addresses', { addresses: addresses } );
+    res.view ('pages/account/address', { addresses: addresses } );
   },
 
-  findOne: async function (req, res) {
-    sails.log.debug("search specific article....")
-    let article = await Article.findOne({
-      id: req.params.id
-    }).populate('articleVariants');
-    // cross joining not supported by framework
-    for (let [index, variant] of article.articleVariants.entries()) {
-      let sizes = await ArticleVariantSize.find({variant: variant.id});
-      article.articleVariants[index].variantSizes = sizes;
-    }
-    res.view('pages/admin/article/show', {
-      article: article
-    })
-  },
   edit: async function (req, res) {
-    sails.log.debug("show edit for article....")
-    let article = await Article.findOne({
+    sails.log.debug("show edit for address....")
+    let address = await Address.findOne({
       id: req.params.id
     });
-    res.view('pages/admin/article/edit', {
-      article: article
+    if(address.user != req.me.id) {
+      return res.unauthorized();
+    }
+    res.view('pages/account/address-edit', {
+      address: address
     })
   },
   destroy: async function (req, res) {
-    sails.log.debug("delete article....")
-    let article = await Article.destroy({
+    sails.log.debug("delete address....")
+    let address = await Address.findOne({
       id: req.params.id
     });
-    res.redirect('/admin/article')
+    if(address.user != req.me.id) {
+      return res.unauthorized();
+    }
+    await Address.destroy({
+      id: req.params.id
+    });
+    res.redirect('/account/address')
   },
   update: async function (req, res) {
-    sails.log.debug("update article....")
+    sails.log.debug("update address....")
     let params = req.allParams();
-    await Article.updateOne({
+    let address = await Address.findOne({
+      id: req.params.id
+    });
+    if(address.user != req.me.id) {
+      return res.unauthorized();
+    }
+    await Address.updateOne({
       id: req.params.id
     }).set(params);
-    res.redirect('/admin/article')
+    res.redirect('/account/address')
   }
 };
 
