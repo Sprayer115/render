@@ -8,25 +8,26 @@
       <input type="text" id="filter" name="filter" placeholder="blue;" required value="<%= variant.filter %>">
     </div>
     <div>
-        <label for="image">Bild hochladen</label>
-        <input type="file" class="form-control" name="image" id="image">
-    </div>
-    <div>
-      <input type="submit" value="Submit">
+      <input type="submit" value="Ändern">
     </div>
   </form>
 
-<form>
-    <div class="form">
-        <input name="file_upload" id="entry_value" ref="fileInput" type="file"  onchange="getFileName()">
-        <div>     
-            <img src="/images/upload.png" alt="upload" width="7%" class="mx-2">
-                Upload your files here or 
-            <button class="btn bg-color-dblue btn-primary px-4 py-3" href="/admin/article/<%= article.id %>/getFileName">Browse</button></div>
-        <span id="fileName" class="text-primary ">
-        </span>
-    </div>
-</form>  
+  <br>
+  <h2>Aktuelles Bild</h2>
+  <img src="/images/<%= variant.id %>Upload.png" style="max-width: 50% !important;" class="img-thumbnail mx-auto d-block" alt="Responsive image">
+
+  <br>
+  <h3>
+    Neues Bild hochladen
+  </h3>
+  <form id="uploadForm"
+        enctype="multipart/form-data"
+        action="/admin/variant/<%= variant.id %>/upload"
+        method="post" name="uploadForm" novalidate>
+      <input type="file" id="variantImage" name="variantImage"/>
+  
+  <input type="submit" value="hochladen"/>
+  </form>
   
   
   

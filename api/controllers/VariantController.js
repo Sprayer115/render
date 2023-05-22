@@ -55,34 +55,41 @@ module.exports = {
 
   update: async function (req, res) {
     sails.log.debug("updating variant");
-    req.file('image').upload({
-      // don't allow the total upload size to exceed ~10MB
-      maxBytes: 10000000,
-    }, async function whenDone(err, uploadedFiles) {
-        if (err) {
-          return res.serverError(err);
-        }
-    
-        // If no files were uploaded, respond with an error.
-        if (uploadedFiles.length === 0){
-          return res.badRequest('No file was uploaded');
-        }
         let params = req.allParams();
         let fname = uploadedFiles[0].fd;
         params.image_path = fname
         await ArticleVariant.updateOne({
           id: req.params.id
         }).set(params);
-        res.redirect('/admin/article/' + params.article + "/show")
-    });
-    
+        res.redirect('/admin/article/' + params.article + "/show");
   },
   
   new: async function(req, res) {
     sails.log.debug("show create for new variant....")
     let article = req.params.id;
     res.view('pages/admin/variant/new', {article: article});
-  }
+  },
+
+  upload: function  (req, res) {
+    if(req.method === 'GET')
+     return res.json({'status':'GET not allowed'});      
+    
+    sails.log.debug('We have entered the uploading process ');
+    
+    req.file('variantImage').upload({
+      dirname:'../../assets/images/',
+      saveAs: req.params.id +"Upload.png"}, async function(err,files){
+      sails.log.debug('file is :: ', +files);
+      if (err) {
+        sails.log(err);
+        return res.json({status: 500, error: err});  
+      }       
+      sails.log(files);
+      //await Sleep(3000);
+      //make function take longer for storage time
+      res.redirect('/admin/variant/' + req.params.id + "/edit");
+     });
+   }
 };
 
 
