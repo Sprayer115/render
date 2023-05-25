@@ -12,9 +12,7 @@ module.exports = {
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-    order_id: { type: 'number', columnType: 'INTEGER', required: true},
-    article_variant_size_id: { type: 'number', required: true, columnType: 'INTEGER'},
-    amount: { type: 'number', defaultsTo: 1, columnType: 'INTEGER'}
+    amount: { type: 'number', defaultsTo: 1, columnType: 'INTEGER'},
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
@@ -24,7 +22,14 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-
+    
+    order: {
+      model: 'order'
+    },
+    article: {
+      model: 'ArticleVariantSize',
+      unique: true
+    }
   },
   tableName: 'order_article'
 };
