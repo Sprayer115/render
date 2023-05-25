@@ -70,26 +70,38 @@ module.exports = {
     res.view('pages/admin/variant/new', {article: article});
   },
 
-  upload: function  (req, res) {
-    if(req.method === 'GET')
-     return res.json({'status':'GET not allowed'});      
-    
-    sails.log.debug('We have entered the uploading process ');
-    
-    req.file('variantImage').upload({
-      dirname:'../../assets/images/',
-      saveAs: req.params.id +"Upload.png"}, async function(err,files){
-      sails.log.debug('file is :: ', +files);
+    //<img src="https://wetebucket.s3.us-west-2.amazonaws.com/<%= variant.image_path %>" alt="">
+
+
+  upload: async function (req, res) {
+    sails.log("Upload image for variant...")
+    // Define the parameters of the upload as an object
+    // In this example only the path, wehre to upload the image, is set
+    let params = {
+      //dirname: require('path').resolve(sails.config.appPath, 'assets/images/meals/')
+      adapter: require('skipper-s3'),
+      key: 'AKIAXCTWFCIPLLVPH4NK',
+      secret: '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',
+      bucket: 'wetebucket',
+      region: 'us-west-2'
+    };
+
+    let callback = async function (err, uploadedFiles) {
       if (err) {
-        sails.log(err);
-        return res.json({status: 500, error: err});  
-      }       
-      sails.log(files);
-      sails.log("make a pause")
-     //TODO: take care of reload picture problem and picture refresh
-      res.redirect('/admin/variant/' + req.params.id + "/edit");
-     });
-   }
+        return res.serverError(err);
+      } else {
+        sails.log("Uploaded!")
+      }
+      let fname = require('path').basename(uploadedFiles[0].fd);
+      await ArticleVariant.updateOne({ id: req.params.id }).set({ image_path:fname });
+    };
+
+      // This funvtion is called, once all files are uploaded
+      // err indicates if the upload process triggered an error and has been aborted 
+      // uploaded files contains an array of the files which have been uploaded, in our case only one.
+      await req.file('variantImage').upload(params, callback);
+      return res.redirect('/admin/variant/' + req.params.id + '/edit');
+    }
 };
 
 

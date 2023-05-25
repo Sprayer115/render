@@ -47,7 +47,7 @@ function validateSize() {
       alert("Name muss ausgefüllt sein");
       return false;
     }
-    if(document.forms["variant"]["article"].value > 0){
+    if(document.forms["variant"]["article"].value < 0){
       alert("Artikel Bezug muss gesetzt sein, im Zweifel Seite neu aufrufen");
       return false;
     }
