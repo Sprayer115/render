@@ -13,10 +13,6 @@
   </form>
 
   <br>
-  <h2>Aktuelles Bild</h2>
-  <img src="/images/<%= variant.id %>Upload.png" style="max-width: 50% !important;" class="img-thumbnail mx-auto d-block" alt="Responsive image">
-
-  <br>
   <h3>
     Neues Bild hochladen
   </h3>
@@ -25,8 +21,12 @@
         action="/admin/variant/<%= variant.id %>/upload"
         method="post" name="uploadForm" novalidate>
       <input type="file" id="variantImage" name="variantImage"/>
-  
-  <input type="submit" value="hochladen"/>
+      <div hidden>
+        <p>
+          <input type="number" id="id" name="id" value="<%= variant.id %>" required>
+        </p>
+      </div>
+  <input class="btn btn-primary" type="submit" value="hochladen"/>
   </form>
   
   

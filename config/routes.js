@@ -23,7 +23,7 @@ module.exports.routes = {
   'POST /account/address':  'AddressController.create',
   'GET /account/address/:id':  'AddressController.edit',
   'POST /account/address/:id':  'AddressController.update',
-  'GET /account/address/:id/destroy':  'AddressController.destroy',
+  //'GET /account/address/:id/destroy':  'AddressController.destroy',
   'GET /account/address/new':  {view: 'pages/account/address-new'},
 
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
