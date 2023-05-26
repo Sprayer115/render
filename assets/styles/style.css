@@ -2,6 +2,14 @@
 /* ################ mobile styles ############### */
 /* ############################################## */
 @media screen and (min-width: 350px) {
+    /* Slideshow container */
+    .slideshow-container {
+        /*max-width: 1000px;*/
+        position: relative;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0;
+        }
     html, body {
         margin: 0;
         padding: 0;
@@ -153,12 +161,48 @@
     .welcome-text h3 {
         font-weight: normal;
     }
+    /* Slideshow container */
+    .slideshow-container {
+    /*max-width: 1000px;*/
+    position: relative;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 0;
+    }
 }
 
 @media screen and (min-width: 1100px) {
     .category-item {
         flex-basis: 16.6667%;
     }
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+      }
+      
+      .price {
+        color: grey;
+        font-size: 22px;
+      }
+      
+      .card button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+      }
+      
+      .card button:hover {
+        opacity: 0.7;
+      }
 }
 
 /* ############################################## */
@@ -216,12 +260,7 @@ footer {
 }
 * {box-sizing:border-box}
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
+
 
 /* Hide the images by default */
 .mySlides {
@@ -255,26 +294,6 @@ footer {
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
@@ -295,6 +314,7 @@ footer {
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
+  animation-fill-mode: forwards; 
 }
 
 @keyframes fade {
