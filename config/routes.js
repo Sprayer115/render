@@ -52,6 +52,8 @@ module.exports.routes = {
 
   '/': { view: 'pages/home' },
   'GET /admin/article/new': { view: 'pages/admin/article/new' },//C
+  //'GET /homeShortSleeve': { view: 'pages/shortSleeve/homeShortSleeve'},
+  //'GET /homeShortSleeve': { controller: 'ArticleController', action: 'article'},
 
 
   /***************************************************************************
@@ -87,7 +89,12 @@ module.exports.routes = {
   'GET /admin/size/:id/edit': 'SizeController.edit',
   'POST /admin/size/:id/update': 'SizeController.update',
 
+  'GET /vArticleShopping': {  action: 'view-article-shopping' },
+
   'GET /api/basket': {  action:'api/basket/get' },
   'POST /api/basket': {  action:'api/basket/add' },
+
+  'POST /api/address': {  action:'api/basket/post-address' },
+  'GET /api/order': {  action:'api/basket/order' },
   
 };
