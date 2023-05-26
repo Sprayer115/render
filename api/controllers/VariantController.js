@@ -80,11 +80,11 @@ module.exports = {
     let params = {
       //dirname: require('path').resolve(sails.config.appPath, 'assets/images/meals/')
       adapter: require('skipper-s3'),
-      key: 'AKIAXCTWFCIPLLVPH4NK',
-      secret: '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',
+      key: sails.config.s3accesskey,
+      secret: sails.config.s3secret,
       bucket: 'wetebucket',
       region: 'us-west-2'
-    };
+      };
 
     let callback = async function (err, uploadedFiles) {
       if (err) {
