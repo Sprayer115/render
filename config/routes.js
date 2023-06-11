@@ -94,6 +94,9 @@ module.exports.routes = {
   'GET /api/basket': {  action:'api/basket/get' },
   'POST /api/basket': {  action:'api/basket/add' },
 
+  'GET /api/category': {  action:'api/category/index' },
+
+
   'POST /api/address': {  action:'api/basket/post-address' },
   'GET /api/order': {  action:'api/basket/order' },
   
