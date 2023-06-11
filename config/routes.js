@@ -89,6 +89,13 @@ module.exports.routes = {
   'GET /admin/size/:id/edit': 'SizeController.edit',
   'POST /admin/size/:id/update': 'SizeController.update',
 
+  'GET /admin/category/new': { controller: 'CategoryController', action:'new' },
+  'POST /admin/category': { controller: 'CategoryController', action:'create' },
+  'GET /admin/category/:id/destroy': { controller: 'CategoryController', action: 'destroyOne' },
+  'GET /admin/category': { controller: 'CategoryController', action: 'find' },
+
+  'GET /api/category': { action: 'api/category/index'},
+
   'GET /vArticleShopping': {  action: 'view-article-shopping' },
 
   'GET /api/basket': {  action:'api/basket/get' },

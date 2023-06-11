@@ -1,27 +1,27 @@
 module.exports = {
 
 
-    friendlyName: 'View article shopping',
+  friendlyName: 'View article shopping',
   
   
-    description: 'Display "article shopping" page.',
+  description: 'Display "article shopping" page.',
   
   
-    exits: {
+  exits: {
   
-      success: {
-        viewTemplatePath: 'pages/shortSleeve/vShortSleeve'
-      }
-  
-    },
-  
-  
-    fn: async function () {
-  
-      // Respond with view.
-      return {};
-  
+    success: {
+      viewTemplatePath: 'pages/shortSleeve/vShortSleeve'
     }
+  
+  },
+  
+  
+  fn: async function () {
+  
+    // Respond with view.
+    return {};
+  
+  }
   
   
   };
