@@ -9,7 +9,11 @@ export default {
       let url = new URL(origin + "/api/category");
       fetch(url)
         .then((res) => res.json())
-        .then((data) => (this.categories = data));
+        .then((data) => {
+          console.log(data);
+          this.categories = data;
+
+        });
     },
     methods: {
       order: function (id) {
@@ -28,8 +32,8 @@ export default {
       <div class="container">
           <span class="h1">Artikel</span>
           <div class="my-5" v-for="category in this.categories">
-          <span class="h3">{{ category.name }}</span>
-          <hr>
+            <span class="h3">{{ category.name }}</span>
+            <hr>
               <div class="mt-2" v-for="article in category.articles">
                 <overview :article='article' @order="order"></overview>
               </div>

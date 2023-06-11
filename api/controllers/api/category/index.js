@@ -19,12 +19,10 @@ module.exports = {
   
     fn: async function (inputs) {
   
-      return categories = await Category.find().populate('articles');
+      return categories = await Category.find().populate('article');
   
       
   
     }
-  
-  
   };
   
