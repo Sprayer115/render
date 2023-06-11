@@ -18,6 +18,7 @@ module.exports = {
   
   
     fn: async function (inputs) {
+      // 11.06
       sails.log.debug("category requested");
       categories = await Category.find();
 
