@@ -19,18 +19,11 @@ export default {
         ],
       };
     },
+    created() {
+      console.log("created");
+      this.fetchAddresses();
+    },
     methods: {
-      created() {
-        console.log("address created");
-        let url = new URL(origin + "/api/address");
-        fetch(url)
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            this.addresses = data;
-  
-          });
-      },
       submitAddress() {
         let url = new URL(origin + "/api/address");
         let data = new FormData();
@@ -43,19 +36,35 @@ export default {
           this.$router.push("/checkout");
         });
       },
+      fetchAddresses() {
+        let url = new URL(origin + "/api/address");
+        fetch(url)
+          .then((res) => res.json())
+          .then((data) => {
+            data.forEach(address => {
+              address.value = address.id;
+              address.title = address.firstname + " " + address.lastname+ " " + address.street + " " + address.street_no;
+              address.text = address.firstname + " " + address.lastname+ " " + address.street + " " + address.street_no;
+            });
+            console.log(data);
+            this.addresses = data;
+            console.log(" test", this.addresses[0].id)
+          });
+      }
     },
     template: `
       <div class="container">
         <h1>Lieferdaten</h1>
         <v-sheet class="mx-auto">
           <v-form>
-            <v-text-field v-model="name" :rules="rules" label="Name"></v-text-field>
-            <select v-if="addresses != []" v-model="selected_address">
-              <option v-for="address in addresses" :value="address.id">
-                {{ address.firstname + " " + address.lastname + " " + address.street + " " + address.street_no + " " + address.city + " " + address.zip }}
-              </option>
-            </select>
-            <div v-else class="btn btn-primary" href="/account/address/new">Adressen verwalten</div>
+            <v-select
+              v-if="addresses.length > 0"
+              v-model="selected_address"
+              :items="addresses"
+              label="Wählen Sie eine Adresse aus"
+            >
+            </v-select>
+            <div class="btn btn-primary" href="/account/address/new">Adressen verwalten</div>
           </v-form>
         </v-sheet>
   

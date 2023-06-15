@@ -17,12 +17,11 @@ module.exports = {
     },
   
   
-    fn: async function (req, inputs) {
+    fn: async function (inputs) {
       // 15.06
-      sails.log.debug(req.me);
       sails.log.debug("addresses requested");
-      addresses = await address.find({
-        where: { user:  req.me.id}
+      addresses = await Address.find({
+        where: { user:  this.req.me.id}
       });
       return addresses;
     }
