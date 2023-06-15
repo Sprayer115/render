@@ -20,8 +20,7 @@ export default {
         .then(res => res.json())
         .then(data => {
           this.basket = data.basket,
-          this.name = data.address.name,
-          this.address = data.address.address
+          this.address = data.address;
         })
     },
     template: `
@@ -34,14 +33,14 @@ export default {
 
       <div class="h2">Lieferdaten</div>
         <div class="h4">
-            Name: {{ name }}
+            Name: {{ address.firstname + " " + address.lastname }}
         </div>
         <div class="h4">
-            Adresse: {{ address }}
+            Adresse: {{ address.street + " " + address.street_no + " " + address.city + " " + address.zip }}
         </div>
         <div class="mt-4">
           <router-link class="btn btn-secondary mr-5" to="/address">Zurück</router-link>
-          <span class="btn btn-primary" @click="order">Kostenpflichtig bestellen</span>
+          <span class="btn btn-primary" @click="order()">Kostenpflichtig bestellen</span>
         </div>
       </div>
       `,

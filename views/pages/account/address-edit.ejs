@@ -1,5 +1,5 @@
 <div class="container pt-5 pb-5">
-  <form action="/account/address/<%= address.id %>" method="POST">
+  <form action="/account/address/<%= address.id %>"  onsubmit="return validateAdress()" method="POST">
     <div>
       <label class="col-form-label-lg" for="firstname">Vorname:</label>
       <input class="form-control" type="text" id="firstname" name="firstname" value=<%= address.firstname %> required>

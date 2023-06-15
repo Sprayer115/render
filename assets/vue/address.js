@@ -25,16 +25,18 @@ export default {
     },
     methods: {
       submitAddress() {
-        let url = new URL(origin + "/api/address");
+        /*let url = new URL(origin + "/api/address");
         let data = new FormData();
-        data.append("name", this.name);
-        data.append("address", this.address);
+        data.append("address", this.selected_address);
         fetch(url, {
           method: "POST",
           body: data,
         }).then((result) => {
-          this.$router.push("/checkout");
-        });
+          console.log(result);
+        });*/
+        this.$route.params.address = this.selected_address;
+        this.$router.push("/checkout");
+
       },
       fetchAddresses() {
         let url = new URL(origin + "/api/address");

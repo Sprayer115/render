@@ -57,3 +57,36 @@ function validateSize() {
       return false;
     }
   }
+
+  function validateAdress() {
+    if(document.forms["address"]["firstname"].value == ""){
+      alert("Vorname muss ausgefüllt sein");
+      return false;
+    }
+    if(document.forms["address"]["lastname"].value == ""){
+      alert("Nachname muss ausgefüllt sein");
+      return false;
+    }
+    if(document.forms["address"]["street"].value == ""){
+      alert("Nachname muss ausgefüllt sein");
+      return false;
+    }
+    if(document.forms["address"]["street_no"].value == "" && !document.forms["address"]["street_no"].value.startsWith("-")){
+      alert("Nachname muss ausgefüllt sein");
+      return false;
+    }
+    if(document.forms["address"]["city"].value == ""){
+      alert("Nachname muss ausgefüllt sein");
+      return false;
+    }
+
+    let zip = document.forms["address"]["zip"].value;
+    if(zip != "" && !zip.endsWith(";")){
+      alert("Filter muss mit einem ';' enden");
+      return false;
+    }
+    if (!/^\d+$/.test(zip)) {
+      alert("PLZ enthält ungültige Zeichen");
+      return false;
+    }
+  }

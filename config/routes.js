@@ -105,7 +105,7 @@ module.exports.routes = {
   'GET /api/category': {  action:'api/category/index' },
 
 
-  'POST /api/address': {  action:'api/basket/post-address' },
+  'POST /api/address': {  action:'api/basket/address' },
   'GET /api/order': {  action:'api/basket/order' },
   
 };

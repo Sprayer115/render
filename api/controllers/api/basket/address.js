@@ -23,11 +23,8 @@ module.exports = {
 
   fn: async function (inputs) {
     cconsole.log("searching for address id")
-    let address = await Address.findOne({ id: inputs.id })
-
+    address = await Address.findOne(inputs.id);
     this.req.session.address = address;
-    return;
+    return true;
   }
-
-
 };

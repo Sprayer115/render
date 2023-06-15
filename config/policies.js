@@ -23,6 +23,7 @@ module.exports.policies = {
   'entrance/*': true,
   'account/logout': true,
   'api/category/index': true,
+  'api/basket/get': true,
   //'view-article-shopping': true,
 
 
