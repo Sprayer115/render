@@ -23,7 +23,7 @@ module.exports.policies = {
   'entrance/*': true,
   'account/logout': true,
   'api/category/index': true,
-  'view-article-shopping': true,
+  //'view-article-shopping': true,
 
 
   ArticleController: {

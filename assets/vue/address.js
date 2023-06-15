@@ -2,7 +2,8 @@ export default {
     data() {
       return {
         name: "",
-        address: "",
+        addresses: [],
+        selected_address: "",
         rules: [
           val => {
             const specialChars =
@@ -19,6 +20,17 @@ export default {
       };
     },
     methods: {
+      created() {
+        console.log("address created");
+        let url = new URL(origin + "/api/address");
+        fetch(url)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            this.addresses = data;
+  
+          });
+      },
       submitAddress() {
         let url = new URL(origin + "/api/address");
         let data = new FormData();
@@ -38,7 +50,12 @@ export default {
         <v-sheet class="mx-auto">
           <v-form>
             <v-text-field v-model="name" :rules="rules" label="Name"></v-text-field>
-            <v-text-field v-model="address" :rules="rules" label="Adresse"></v-text-field>
+            <select v-if="addresses != []" v-model="selected_address">
+              <option v-for="address in addresses" :value="address.id">
+                {{ address.firstname + " " + address.lastname + " " + address.street + " " + address.street_no + " " + address.city + " " + address.zip }}
+              </option>
+            </select>
+            <div v-else class="btn btn-primary" href="/account/address/new">Adressen verwalten</div>
           </v-form>
         </v-sheet>
   

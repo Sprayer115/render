@@ -102,6 +102,7 @@
               <li class="nav-item active">
                 <a class="nav-link" href="/about-us">Über Uns</a>
               </li>
+              <% if(true) {%>
               <li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                   aria-haspopup="true" aria-expanded="false">
@@ -111,17 +112,16 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" style="color:green;" href="/admin/article">Artikel</a>
                   <a class="dropdown-item" style="color:green" href="/admin/category">Kategorien</a>
-                  <a class="dropdown-item" style="color:red;" href="#">Kunden</a>
-                  <a class="dropdown-item" style="color:red;" href="#">Bestellungen</a>
                 </div>
               </li>
               </a>
+              <% } %>
             </ul>
           </div>
           <div>
             <ul class="navbar-nav d-flex flex-row ">
               <li class="nav-item me-3 me-lg-0">
-                <a class="nav-link" href="/cart"><i class="fa fa-shopping-cart icons fa-2x" aria-hidden="true"></i></a>
+                <a class="nav-link" href="/vArticleShopping#/basket"><i class="fa fa-shopping-cart icons fa-2x" aria-hidden="true"></i></a>
               </li>
               <% if(req.me) { %>
               <li class="nav-item me-3 me-lg-0">

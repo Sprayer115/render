@@ -95,6 +95,7 @@ module.exports.routes = {
   'GET /admin/category': { controller: 'CategoryController', action: 'find' },
 
   'GET /api/category': { action: 'api/category/index'},
+  'GET /api/address': { action: 'api/address/index'},
 
   'GET /vArticleShopping': {  action: 'view-article-shopping' },
 

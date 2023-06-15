@@ -7,7 +7,7 @@ export default {
       };
     },
     methods: {
-      orderMeals() {
+      order() {
         let url = new URL(origin + '/api/order');
         fetch(url)
         .then(res => res.json())
@@ -41,7 +41,7 @@ export default {
         </div>
         <div class="mt-4">
           <router-link class="btn btn-secondary mr-5" to="/address">Zurück</router-link>
-          <span class="btn btn-primary" @click="orderMeals">Kostenpflichtig bestellen</span>
+          <span class="btn btn-primary" @click="order">Kostenpflichtig bestellen</span>
         </div>
       </div>
       `,
