@@ -22,7 +22,7 @@ module.exports = {
 
 
   fn: async function (inputs) {
-    cconsole.log("searching for address id")
+    sails.log.debug("searching for address id")
     address = await Address.findOne(inputs.id);
     this.req.session.address = address;
     return true;

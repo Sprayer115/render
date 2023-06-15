@@ -25,7 +25,7 @@ export default {
     },
     methods: {
       submitAddress() {
-        /*let url = new URL(origin + "/api/address");
+        let url = new URL(origin + "/api/address");
         let data = new FormData();
         data.append("address", this.selected_address);
         fetch(url, {
@@ -33,9 +33,10 @@ export default {
           body: data,
         }).then((result) => {
           console.log(result);
-        });*/
-        this.$route.params.address = this.selected_address;
-        this.$router.push("/checkout");
+          this.$router.push("/checkout");
+
+        });
+        //this.$route.params.address = this.selected_address;
 
       },
       fetchAddresses() {
