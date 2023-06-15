@@ -37,7 +37,7 @@ module.exports = {
         category = categories[category];
         articles = await Article.find({
           where: { filter: { contains: category.filter } }
-        });
+        }).populate(['articleVariants']);
         category.articles = articles;
       }
 

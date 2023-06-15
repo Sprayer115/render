@@ -13,9 +13,19 @@
   </form>
 
   <br>
+  <% if(variant.image_path != "" || variant.image_path != null) { %>
+
+  <h3>
+    Bild überschreiben    
+  </h3>
+
+  <% }else { %>
+
   <h3>
     Neues Bild hochladen
   </h3>
+
+  <% } %>
   <form id="uploadForm"
         enctype="multipart/form-data"
         action="/admin/variant/<%= variant.id %>/upload"

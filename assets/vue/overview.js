@@ -2,7 +2,7 @@ export default {
     props: ['article'],
     data() {
       return {
-        dialog: false,
+        dialog: true,
       };
     },
     methods: {
@@ -24,8 +24,10 @@ export default {
                       <p></p>
                       <div class="dialog" v-if="dialog">
                         <div class="dialog-content">    
-                        <button @click="toggleDialog()" class="close-icon" >x</button>
-                        <img :src="'https://wetebucket.s3.us-west-2.amazonaws.com/'+article.image">
+                          <button @click="toggleDialog()" class="close-icon" >x</button>
+                          <div v-if="article.articleVariants[0] != null">
+                            <img :src="'https://wetebucket.s3.us-west-2.amazonaws.com/'+article.articleVariants[0].image_path">
+                          </div>
                         </div>
                       </div>
                   </div>

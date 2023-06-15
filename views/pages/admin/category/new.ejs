@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="/category" method="post">
+    <form action="/admin/category" method="post">
         <% if (message.length>0) { %>
             <div class="mt-5 alert alert-danger"><%= message %></div>
         <% } %>
@@ -11,6 +11,10 @@
             <div class="form-group">
                 <label class="col-form-label-lg">Reihenfolge</label>
                 <input type="number" value="<%= ordernumber %>" class="form-control" maxlength="2" name="ordernumber">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg">Filter</label>
+                <input type="string" class="form-control" name="filter">
             </div>
         </div>
         <button type="submit" class="green-button mt-4">Hinzufügen</button>

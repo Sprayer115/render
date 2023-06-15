@@ -22,8 +22,8 @@ module.exports.policies = {
   // Bypass the `is-logged-in` policy for:
   'entrance/*': true,
   'account/logout': true,
-  'api/category': true,
-  'vArticleShopping': true,
+  'api/category/index': true,
+  'view-article-shopping': true,
 
 
   ArticleController: {
@@ -31,6 +31,10 @@ module.exports.policies = {
   },
   AddressController: {
     '*': 'is-logged-in',
+  },
+
+  CategoryController: {
+    '*': 'is-super-admin',
   },
 
   VariantController: {
