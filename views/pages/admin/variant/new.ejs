@@ -1,19 +1,19 @@
-<form name="variant" onsubmit="return validateVariant()" action="/admin/variant/" method="POST">
+<form class="container pt-5 pb-5" name="variant" onsubmit="return validateVariant()" action="/admin/variant/" method="POST">
   <div hidden>
     <p>
       <input type="number" id="article" name="article" value="<%= article %>" required>
     </p>
   </div>
-  <div>
-    <label for="name">Varianten Name:</label>
-    <input type="text" id="name" name="name" required>
+  <div class="form-group">
+    <label class="form-label" for="name">Varianten Name:</label>
+    <input class="form-control" type="text" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="description">Filter:</label>
+    <input class="form-control" type="text" id="filter" name="filter" placeholder="blue;" required>
   </div>
   <div>
-    <label for="description">Filter:</label>
-    <input type="text" id="filter" name="filter" placeholder="blue;" required>
-  </div>
-  <div>
-    <input type="submit" value="Anlegen">
+    <input class="btn btn-primary" type="submit" value="Anlegen">
   </div>
 </form>
 

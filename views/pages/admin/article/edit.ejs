@@ -1,28 +1,31 @@
-<form name="article" action="/admin/article/<%= article.id %>/update" method="POST" onsubmit="return validateArticle()">
-  <div>
-    <label for="name">Artikelname:</label>
+<form class="container pt-5 pb-5" name="article" action="/admin/article/<%= article.id %>/update" method="POST" onsubmit="return validateArticle()">
+
+  <div class="form-group">
+    <label class="form-label" for="name">Artikelname:</label>
     <br>
-    <input type="text" id="name" name="name" value="<%= article.name %>" required>
+    <input class="form-control"  type="text" id="name" name="name" value="<%= article.name %>" required>
   </div>
-  <div>
-    <label for="description">Artikelbeschreibung:</label>
+  <div class="form-group">
+    <label class="form-label" for="description">Artikelbeschreibung:</label>
     <br>
-    <textarea id="description" name="description" required><%= article.description %></textarea>
+    <textarea class="form-control" id="description" name="description" required><%= article.description %></textarea>
   </div>
-  <div>
-    <label for="price">Preis:</label>
+  <div class="form-group">
+    <label class="form-label" for="price">Preis:</label>
     <br>
-    <input type="number" id="price" min=0.01 step=0.01 name="price" required value="<%= article.price %>">
+    <input class="form-control"  type="number" id="price" min=0.01 step=0.01 name="price" required value="<%= article.price %>">
   </div>
-  <div>
-    <label for="description">Filter:</label>
+  <div class="form-group">
+    <label class="form-label" for="description">Filter:</label>
     <br>
-    <input type="text" id="filter" name="filter" required value="<%= article.filter %>" placeholder="baumwolle;polo;">
+    <input class="form-control"  type="text" id="filter" name="filter" required value="<%= article.filter %>" placeholder="baumwolle;polo;">
   </div>
   <br>
   <!--<a  href="/article/<%=article.id %>/uploadImageForm" class="btn btn-primary">Bild Hochladen</a> -->
   <div>
     <br>
-    <input type="submit" value="Submit">
+    <input class="btn btn-primary" value="Submit">
   </div>
+  <br>
+  <br>
 </form>

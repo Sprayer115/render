@@ -1,28 +1,33 @@
-<form name="variant" onsubmit="return validateVariant()" action="/admin/variant/<%= variant.id %>/update" method="POST">
-    <div>
-      <label for="name">Varianten Name:</label>
-      <input type="text" id="name" name="name" required value="<%= variant.name %>">
+<form class="container pt-5 pb-5" name="variant" onsubmit="return validateVariant()" action="/admin/variant/<%= variant.id %>/update" method="POST">
+    <div class="form-group">
+      <label class="form-label" for="name">Varianten Name:</label>
+      <input class="form-control" type="text" id="name" name="name" required value="<%= variant.name %>">
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="description">Filter:</label>
+      <input class="form-control" type="text" id="filter" name="filter" placeholder="blue;" required value="<%= variant.filter %>">
     </div>
     <div>
-      <label for="description">Filter:</label>
-      <input type="text" id="filter" name="filter" placeholder="blue;" required value="<%= variant.filter %>">
+      <input class="btn btn-primary" type="submit" value="Ändern">
     </div>
-    <div>
-      <input type="submit" value="Ändern">
-    </div>
-  </form>
-
+</form>
+<div class="container pt-5 pb-5">
   <br>
-  <% if(variant.image_path != "" || variant.image_path != null) { %>
+  <% if(variant.image_path == "") { %>
 
   <h3>
-    Bild überschreiben    
+    Neues Bild hochladen
   </h3>
 
   <% }else { %>
 
   <h3>
-    Neues Bild hochladen
+    Bild überschreiben
+    <div class="row">
+      <div class="col-4 container">    
+        <img class="img-fluid" src="https://wetebucket.s3.us-west-2.amazonaws.com/<%=variant.image_path%>">
+      </div>
+    </div>
   </h3>
 
   <% } %>
@@ -30,14 +35,21 @@
         enctype="multipart/form-data"
         action="/admin/variant/<%= variant.id %>/upload"
         method="post" name="uploadForm" novalidate>
-      <input type="file" id="variantImage" name="variantImage"/>
+      <div class="row">
+        <div class="col-4-left">
+          <input type="file" id="variantImage" name="variantImage"/>
+        </div>
+        <div class="col-4-right">
+          <input class="btn btn-primary" type="submit" value="hochladen"/>
+        </div>
+      </div>
       <div hidden>
         <p>
           <input type="number" id="id" name="id" value="<%= variant.id %>" required>
         </p>
       </div>
-  <input class="btn btn-primary" type="submit" value="hochladen"/>
   </form>
-  
+  <br>
+</div>
   
   

@@ -30,7 +30,7 @@ module.exports = {
       via: 'article'
     },
     orderArticles: {
-      model: 'orderArticle',
+      collection: 'orderArticle',
       via: 'article'
     }
   },

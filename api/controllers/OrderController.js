@@ -12,15 +12,13 @@ module.exports = {
 
   find: async function (req, res) {
     try {
-      
-      
+      var options = { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+
       let orders = await Order.find({
         where: { user:  req.me.id }
       }).populate('articles');
-      sails.log.debug(orders);
 
       for(order in orders) {
-        sails.log.debug(order);
         price = 0;
         for(article in orders[order].articles) {
           /*orderArticle = orders[order].articles[article];
@@ -28,22 +26,22 @@ module.exports = {
           sails.log.debug(sizeArticle);
           article = await Article.findOne({id: sizeArticle.variant.article });
           sails.log.debug(article, "article"); */
-          price += orders[order].articles[article].price;
+          art = await Article.findOne({id: orders[order].articles[article].article})
+          price += art.price;
         }
-        sails.log.debug(price);
-        orders[order].price = 0;
-        sails.log.debug(orders[order]);
+        orders[order].price = price;
+        var date = new Date(orders[order].createdAt);
+        orders[order].createdAt = date.toLocaleString('de-DE', options);
       }
-
-
+      sails.log.debug(orders, "orders");
+      res.view('pages/account/orders', {
+        orders: orders
+      })
     } catch (error) {
       sails.log.debug(error);
       return res.serverError();
     }
-    sails.log.debug(orders, "orders");
-    res.view('pages/account/orders', {
-      orders: orders
-    })
+    
   },
 
   findOne: async function (req, res) {

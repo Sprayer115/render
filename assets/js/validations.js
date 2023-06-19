@@ -19,15 +19,16 @@ function validateArticle() {
 }
 
 function validateSize() {
+  console.log(document.forms["size"]["article"].value);
     if(document.forms["size"]["name"].value == ""){
       alert("Name muss ausgefüllt sein");
       return false;
     }
-    if(document.forms["size"]["article"].value > 0){
+    if(document.forms["size"]["article"].value < 0){
       alert("Artikel Bezug muss gesetzt sein, im Zweifel Seite neu aufrufen");
       return false;
     }
-    if(document.forms["size"]["variant"].value > 0){
+    if(document.forms["size"]["variant"].value < 0){
         alert("Varianten Bezug muss gesetzt sein, im Zweifel Seite neu aufrufen");
         return false;
       }

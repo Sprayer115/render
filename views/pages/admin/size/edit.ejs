@@ -1,18 +1,18 @@
-<form name="size" action="/admin/size/<%= size.id %>/update" method="POST" onsubmit="return validateSize()">
-    <div>
-      <label for="name">Größe:</label>
-      <input type="text" id="name" name="name" value="<%= size.name %>" required>
+<form class="container pt-5 pb-5" name="size" action="/admin/size/<%= size.id %>/update" method="POST" onsubmit="return validateSize()">
+    <div class="form-group">
+      <label class="form-label" for="name">Größe:</label>
+      <input class="form-control" type="text" id="name" name="name" value="<%= size.name %>" required>
     </div>
-    <div>
-      <label for="description">Filter:</label>
-      <input type="text" id="filter" name="filter" placeholder="M;" value="<%= size.filter %>" required>
+    <div class="form-group">
+      <label class="form-label" for="description">Filter:</label>
+      <input class="form-control" type="text" id="filter" name="filter" placeholder="M;" value="<%= size.filter %>" required>
     </div>
-    <div>
-      <label for="stock">Bestand</label>
-      <input type="number" name="stock" min=0 id="stock" value="<%= size.stock %>" required>
+    <div class="form-group">
+      <label class="form-label" for="stock">Bestand</label>
+      <input class="form-control" type="number" name="stock" min=0 id="stock" value="<%= size.stock %>" required>
   </div>
     <div>
-      <input type="submit" value="Submit">
+      <input class="btn btn-primary" type="submit" value="Submit">
     </div>
   </form>
   

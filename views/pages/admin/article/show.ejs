@@ -1,42 +1,53 @@
 <div class="container">
   <div class="card w-100 mt-4">
-    <h4 class="card-header">
-      Artikel Anzeigen
-    </h4>
-    <div class="col-6 right">
-      <a class="edit-button" href="/admin/article/<%= article.id %>/edit"><i class="fa fa-edit icons" aria-hidden="true"></i></a>
-      <a class="delete-button" href="/admin/article/<%= article.id %>/destroy"><i class="fa fa-trash icons" aria-hidden="true"></i></a>
-    </div>
-    <div>
+    
+    <div class="card-header">
       <div class="row">
-        <div class="col-2">
-          Name
+        <div class="col-8">
+          <h4 class="left">
+            Artikel Anzeigen
+          </h4>
         </div>
-        <div class="col-10">
+        <div class="col-4 text-end">
+          <a class="edit-button" href="/admin/article/<%= article.id %>/edit">
+            <i class="fa fa-edit icons" aria-hidden="true"></i>
+          </a>
+          <a class="delete-button" href="/admin/article/<%= article.id %>/destroy">
+            <i class="fa fa-trash icons" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container pt-5 pb-5 pl-10">
+      <div class="row border-bottom">
+        <div class="col-4 text-start">
+          Name:
+        </div>
+        <div class="col-4 text-end">
           <%= article.name %>
         </div>
       </div>
-      <div class="row">
-        <div class="col-2">
-          Preis
+      <div class="row border-bottom">
+        <div class="col-4 text-start">
+          Preis:
         </div>
-        <div class="col-10">
+        <div class="col-4 text-end">
           <%= article.price %>
         </div>
       </div>
-      <div class="row">
-        <div class="col-2">
-          Beschreibung
+      <div class="row border-b-sm">
+        <div class="col-4 text-start">
+          Beschreibung:
         </div>
-        <div class="col-10">
+        <div class="col-4 text-end">
           <%= article.description %>
         </div>
       </div>
-      <div class="row">
-        <div class="col-2">
+      <br>
+      <div class="row border-b-md">
+        <div class="col-10 text-decoration-underline">
           <h3>Varianten</h3>
         </div>
-
       </div>
       <% if(article.articleVariants) { %>
       <div>
@@ -44,14 +55,14 @@
         <div class="row">
           <div class="col-2">
           </div>
-          <div class="col-2">
-            <h4>
+          <div class="col-6 text-decoration-underline">
+            <h6>
               <a href="/admin/variant/<%= variant.id %>/edit">
                 <%= variant.name %>
               </a>
-            </h4>
+            </h6>
           </div>
-          <div class="col-8">
+          <div class="col-2">
             <span>
               <a class="delete-button" href="/admin/variant/<%= variant.id %>/destroy">
                 <i class="fa fa-trash icons" aria-hidden="true"></i>
@@ -62,17 +73,20 @@
 
           </div>
         </div>
-        <div class="sizes">
-          <div>
-            <h5>Größen</h5>
+        <div class="row ">
+          <div class="col-3">
           </div>
-
+          <div class="col-8 text-decoration-underline">
+            <h5>Größen:</h5>
+          </div>
+        </div>
+        <div>
           <% if(variant.variantSizes) { %>
           <div>
             <% variant.variantSizes.forEach(function(size){ %>
             <div class="row">
               <div class="col-4"></div>
-              <div class="col-2">
+              <div class="col-2 text-decoration-underline">
                 <a class="show-button" href="/admin/size/<%= size.id %>/edit">
                   <%= size.name %>
                 </a>
@@ -92,21 +106,26 @@
           </div>
           <% } %>
 
-          <div class="row">
-            <div class="col-4">
-              <a class="add-button" href="/admin/size/<%= article.id %>/<%= variant.id %>/new">Größe Hinzufügen</a>
+          <div class="row  border-b-md">
+            <div class="col-3">
+            </div>
+            <div class="col-8-right pb-2 pt-2">
+              <a class="btn btn-primary btn-sm" href="/admin/size/<%= article.id %>/<%= variant.id %>/new">Größe Hinzufügen</a>
             </div>
           </div>
         </div>
+        <% }); %>
       </div>
-      <% }); %>
-    </div>
-    <% } %>
-    <div class="row">
-      <div class="col-4">
-        <a class="add-button" href="/admin/variant/<%= article.id %>/new">Variante Hinzufügen</a>
+      <% } %>
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-6 pb-2 pt-2">
+          <a class="btn btn-primary btn-sm" href="/admin/variant/<%= article.id %>/new">Variante Hinzufügen</a>
+        </div>
       </div>
     </div>
+    
+    
   </div>
 
 </div>

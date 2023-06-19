@@ -27,7 +27,7 @@
                             </a>
                         </td>
                         <td>
-                            <%= order.created_at %>
+                            <%= order.createdAt %>
                         </td>
                         <td>
                             <a class="show-button" href="/account/address/<%= order.address_id %>">
@@ -40,7 +40,7 @@
                         <td>
                             <%= order.price %>
                         </td>
-                        <!--<td> <a class="delete-button" href="/account/address/<%= address.id %>/destroy"><i class="fa fa-trash icons" aria-hidden="true"></i></a></td> -->
+                        <!--<td> <a class="delete-button" href="/account/address/<%= order.id %>/destroy"><i class="fa fa-trash icons" aria-hidden="true"></i></a></td> -->
                     </tr>
                     <% }); %>
             </tbody>

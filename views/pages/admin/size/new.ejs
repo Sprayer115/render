@@ -1,24 +1,24 @@
-<form name="size" action="/admin/size/" method="POST" onsubmit="return validateSize()">
+<form class="container pt-5 pb-5" name="size" action="/admin/size/" method="POST" onsubmit="return validateSize()">
   <div hidden>
     <p>
       <input type="number" id="article" name="article" value="<%= article %>" required>
       <input type="number" id="variant" name="variant" value="<%= variant %>" required>
     </p>
   </div>
-  <div>
-    <label for="name">Größe:</label>
-    <input type="text" id="name" name="name" required>
+  <div class="form-group">
+    <label class="form-label" for="name">Größe:</label>
+    <input class="form-control" type="text" id="name" name="name" required>
   </div>
-  <div>
-    <label for="description">Filter:</label>
-    <input type="text" id="filter" name="filter" placeholder="M;" required>
+  <div class="form-group">
+    <label class="form-label" for="description">Filter:</label>
+    <input class="form-control" type="text" id="filter" name="filter" placeholder="M;" required>
   </div>
-  <div>
-    <label for="stock">Bestand</label>
-    <input type="number" min=0 name="stock" id="stock" required>
+  <div class="form-group">
+    <label class="form-label" for="stock">Bestand</label>
+    <input class="form-control" type="number" min=0 name="stock" step="1" id="stock" required>
 </div>
   <div>
-    <input type="submit" value="Anlegen">
+    <input class="btn btn-primary" type="submit" value="Anlegen">
   </div>
 </form>
 

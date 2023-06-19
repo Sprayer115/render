@@ -1,30 +1,22 @@
-<form anme="article" action="/admin/article" method="POST" onsubmit="return validateArticle()">
-  <div>
-    <label for="name">Article Name:</label>
-    <input type="text" id="name" name="name" required>
+<form class="container pt-5 pb-5" name="article" action="/admin/article" method="POST" onsubmit="return validateArticle()">
+  <div class="form-group">
+    <label class="form-label" for="name">Article Name:</label>
+    <input class="form-control" type="text" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="description">Article Description:</label>
+    <textarea class="form-control" id="description" name="description" required></textarea>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="price">Preis:</label>
+    <input class="form-control" type="number" id="price" min=0.01 step=0.01 name="price" required>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="description">Filter:</label>
+    <input class="form-control" type="text" id="filter" name="filter" placeholder="baumwolle;polo;" required>
   </div>
   <div>
-    <label for="description">Article Description:</label>
-    <textarea id="description" name="description" required></textarea>
-  </div>
-  <div>
-    <label for="price">Preis:</label>
-    <input type="number" id="price" min=0.01 step=0.01 name="price" required>
-  </div>
-  <div>
-    <label for="description">Filter:</label>
-    <input type="text" id="filter" name="filter" placeholder="baumwolle;polo;" required>
-  </div>
-  <!--<div class="form-group">
-    <label class="col-form-label-lg">Kategorie</label>
-     <select class="form-select" name="category">
-    <% categories.forEach(function(category){ %>
-        <option value="<%= category.id %>"><%= category.name %></option>
-    <% }); %>
-    </select>
-  </div> -->
-  <div>
-    <input type="submit" value="Anlegen">
+    <input class="btn btn-primary" type="submit" value="Anlegen">
   </div>
 </form>
 

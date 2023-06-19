@@ -27,8 +27,7 @@ module.exports = {
       model: 'order'
     },
     article: {
-      model: 'Article',
-      unique: true
+      model: 'article',
     }
   },
   tableName: 'order_article'

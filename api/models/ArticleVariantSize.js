@@ -27,10 +27,10 @@ module.exports = {
     variant: {
       model: 'ArticleVariant',
     },
-    orderArticles: {
-      model: 'orderArticle',
+    /* orderArticles: {
+      collection: 'orderArticle',
       via: 'article'
-    }
+    }  */
   },
   tableName: 'article_variant_size'
 };
