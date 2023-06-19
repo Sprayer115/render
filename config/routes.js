@@ -26,6 +26,9 @@ module.exports.routes = {
   //'GET /account/address/:id/destroy':  'AddressController.destroy',
   'GET /account/address/new':  {view: 'pages/account/address-new'},
 
+  'GET /account/order':       'OrderController.find',
+  'GET /account/order/:id':   'OrderController.edit',
+
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝

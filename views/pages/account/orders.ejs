@@ -1,0 +1,49 @@
+<div class="container"> 
+    <div class="item-content">
+        <table class="table">
+            <thead>
+                    <th class="text-left">
+                        #
+                    </th>
+                    <th class="text-left">
+                        Datum
+                    </th>
+                    <th class="text-left">
+                        Addresse
+                    </th>
+                    <th class="text-left">
+                        Anazhl Artikel
+                    </th>
+                    <th class="text-left">
+                        Preis
+                    </th>
+            </thead>
+            <tbody>
+                <% orders.forEach(function(order){ %>
+                    <tr>
+                        <td>
+                            <a class="show-button" href="/account/order/<%= order.id %>">
+                                <%= order.id %>
+                            </a>
+                        </td>
+                        <td>
+                            <%= order.created_at %>
+                        </td>
+                        <td>
+                            <a class="show-button" href="/account/address/<%= order.address_id %>">
+                                <%= order.address_id %>
+                            </a>
+                        </td>
+                        <td>
+                            <%= order.articles.length %>
+                        </td>
+                        <td>
+                            <%= order.price %>
+                        </td>
+                        <!--<td> <a class="delete-button" href="/account/address/<%= address.id %>/destroy"><i class="fa fa-trash icons" aria-hidden="true"></i></a></td> -->
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+</div>

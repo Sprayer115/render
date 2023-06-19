@@ -28,6 +28,10 @@ module.exports = {
     articleVariants: {
       collection: 'articleVariant',
       via: 'article'
+    },
+    orderArticles: {
+      model: 'orderArticle',
+      via: 'article'
     }
   },
 

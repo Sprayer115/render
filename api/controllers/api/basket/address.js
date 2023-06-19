@@ -8,7 +8,7 @@ module.exports = {
 
 
   inputs: {
-    id: {
+    address: {
       description: 'The id of the address to store in session',
       type: 'string',
       required: true
@@ -23,7 +23,7 @@ module.exports = {
 
   fn: async function (inputs) {
     sails.log.debug("searching for address id")
-    address = await Address.findOne(inputs.id);
+    address = await Address.findOne(inputs.address);
     this.req.session.address = address;
     return true;
   }

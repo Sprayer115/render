@@ -10,16 +10,39 @@ const Sails = require("sails/lib/app/Sails");
 
 module.exports = {
 
-  create: async function (req, res) {
-    let params = req.allParams();
-    await Article.createEach([params]);
-    res.redirect('/admin/article')
-  },
-
   find: async function (req, res) {
-    let articles = await Article.find();
-    res.view('pages/admin/article/index', {
-      articles: articles
+    try {
+      
+      
+      let orders = await Order.find({
+        where: { user:  req.me.id }
+      }).populate('articles');
+      sails.log.debug(orders);
+
+      for(order in orders) {
+        sails.log.debug(order);
+        price = 0;
+        for(article in orders[order].articles) {
+          /*orderArticle = orders[order].articles[article];
+          sizeArticle = await ArticleVariantSize.findOne({id: orderArticle.article}).populate('variant');
+          sails.log.debug(sizeArticle);
+          article = await Article.findOne({id: sizeArticle.variant.article });
+          sails.log.debug(article, "article"); */
+          price += orders[order].articles[article].price;
+        }
+        sails.log.debug(price);
+        orders[order].price = 0;
+        sails.log.debug(orders[order]);
+      }
+
+
+    } catch (error) {
+      sails.log.debug(error);
+      return res.serverError();
+    }
+    sails.log.debug(orders, "orders");
+    res.view('pages/account/orders', {
+      orders: orders
     })
   },
 

@@ -74,8 +74,12 @@ by a large team, those administrative features might be split across a few diffe
 So, while this \`isSuperAdmin\` demarcation might not be the right approach forever, it's a good place to start.`
     },
   },
-  articleVariants: {
+  addresses: {
     collection: 'addresses',
+    via: 'user'
+  },
+  orders: {
+    collection: 'orders',
     via: 'user'
   }
 

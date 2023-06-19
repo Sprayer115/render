@@ -14,6 +14,7 @@ module.exports = {
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
     address_id: { type: 'number', columnType: 'INTEGER', required: true},
     payed: { type: 'boolean', defaultsTo: false},
+    user: { type: 'integer', required: true},
 
 
 
@@ -28,6 +29,9 @@ module.exports = {
     articles: {
       collection: 'orderArticle',
       via: 'order'
+    },
+    user: {
+      model: 'user'
     }
   },
 

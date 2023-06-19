@@ -27,7 +27,7 @@ module.exports = {
       model: 'order'
     },
     article: {
-      model: 'ArticleVariantSize',
+      model: 'Article',
       unique: true
     }
   },

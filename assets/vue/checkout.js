@@ -11,6 +11,11 @@ export default {
         let url = new URL(origin + '/api/order');
         fetch(url)
         .then(res => res.json())
+        .catch(error => {
+          console.error('Error', error);
+          alert(error.message);
+          return false;
+        })
         .then(this.$router.push("/confirmation"))
       }
     },  
