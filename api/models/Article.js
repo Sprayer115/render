@@ -28,11 +28,16 @@ module.exports = {
     articleVariants: {
       collection: 'articleVariant',
       via: 'article'
-    },
+    },/* 
     orderArticles: {
       collection: 'orderArticle',
       via: 'article'
-    }
+    } *//* ,
+    sizes: {
+      collection: 'ArticleVariantSize',
+      via: 'article',
+      through: 'articlevariant'
+    } */
   },
 
 

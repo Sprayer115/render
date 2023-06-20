@@ -5,7 +5,8 @@ export default {
         om: "",
       };
     },
-    created() {
+    mounted() {
+      console.log(this.$route.query)
       let url = new URL(origin + "/api/category");
       fetch(url)
         .then((res) => res.json())

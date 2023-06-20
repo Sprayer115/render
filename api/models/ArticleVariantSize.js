@@ -26,11 +26,16 @@ module.exports = {
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
     variant: {
       model: 'ArticleVariant',
-    },
-    /* orderArticles: {
+    },/* 
+    article: {
+      model: 'article',
+      via: 'variantSizes',
+      through: 'articlevariant'
+    }, */
+    orderArticles: {
       collection: 'orderArticle',
       via: 'article'
-    }  */
+    } 
   },
   tableName: 'article_variant_size'
 };

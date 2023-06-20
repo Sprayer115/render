@@ -42,11 +42,16 @@ module.exports = {
           console.log("article id does not exist");
           return false;
         } Article validation disabled until shop got restructured to sizes*/ 
+        article = basket[article];
         a = OrderArticle.create({
           amount: 1,
           article: article.id,
           order: order.id
-        }).then();
+        }).then(
+          
+        );
+        s = await ArticleVariantSize.findOne({id: article.id});
+        await ArticleVariantSize.updateOne({id: article.id}).set({stock: s.stock-1});
         console.log(a)
       };
       return true;

@@ -26,12 +26,27 @@ module.exports = {
     }); */
     let params = req.allParams();
     params.image_path = "";
-    await ArticleVariant.create(params);
+    let variant = await ArticleVariant.create(params).fetch();
+    await ArticleVariantSize.create({
+      name: 'S',
+      stock: 5,
+      filter: "S;",
+      variant: variant.id
+    });
+    await ArticleVariantSize.create({
+      name: 'M',
+      stock: 5,
+      filter: "M;",
+      variant: variant.id
+    });
+    await ArticleVariantSize.create({
+      name: 'L',
+      stock: 5,
+      filter: "L;",
+      variant: variant.id
+    });
     res.redirect('/admin/article/' + params.article + "/show")
   },
-
-
-
 
   edit: async function (req, res) {
     let variant = await ArticleVariant.findOne({
