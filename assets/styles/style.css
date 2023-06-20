@@ -2,12 +2,13 @@
 /* ################ mobile styles ############### */
 /* ############################################## */
 @media screen and (min-width: 350px) {
-    
-
+    .head-image{
+        float: left;
+    }
     .card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         width: 200px;
-        height: 350px;
+        max-height: 300px;
         text-align: left;
         font-family: arial;
         display: table;
@@ -359,10 +360,6 @@ footer {
     /*border: 2px solid red;*/
 }  
 .pull-left {
-    float: left;
-}
-.head-image{
-    margin-right: 60px;
     float: left;
 }
 .article-text-desc{
