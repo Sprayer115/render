@@ -4,23 +4,24 @@ export default {
         basket: [],
       };
     },
-    created() {
-      getBasket();
-    },
     methods: {
       deleteFromBasket(index) {
-        let url = new URL(origin + '/api/basket');
-        let data = new FormData();
-        data.append("index", index);
-        fetch(url, {
-          method: "DELETE",
-          body: data,
-        })
-        .then(res => res.json())
-        .catch(error => {
-          alert("Konnte nicht entfernt werden.");
-          return false;
-        })
+        if (confirm("Are you sure you want to delete this item?")) {
+          let url = new URL(origin + '/api/basket');
+          let data = new FormData();
+          data.append("index", index);
+          fetch(url, {
+            method: "DELETE",
+            body: data,
+          })
+          .then(res => {
+            if (res.status !== 200) {
+              alert(res.statusText);
+            }
+            return res.json();
+          })
+          .then(this.basket.splice(index, 1));
+        }
       },
       getBasket() {
         let url = new URL(origin + '/api/basket');
@@ -32,28 +33,36 @@ export default {
         })
         .then(data => this.basket = data.basket);
       }
-    },  
+    }, 
+    mounted() {
+      this.getBasket();
+    },
+     
     template: `
       <h1>Einkaufskorb</h1>
       <div class="mx-4">
-      <ul class="list-group mb-4">                
-        <li class="list-group-item" v-for="item in basket">
+      <ul class="list-group mb-4">
+        <li class="list-group-item list-group-item-action active">
           <div class="row">
-            <div class="col-6"> {{ item.name }} </div>
-            <div class="col-4"> {{ item.description }} </div>
-            <div class="col-2"> {{ item.price }} </div>
-            <div class="col-2">
-              <div id="deleteFromBasket" @click="deleteFromBasket(item.index)" class="btn-xs btn-primary">
+            <div class="col-2"> Artikel</div>
+            <div class="col-6">Beschreibung</div>
+            <div class="col-1 ml-auto">Preis</div>
+            <div class="col-2 ml-auto text-end">
+            </div>
+          </div>
+          
+        </li>
+        <li class="list-group-item" v-for="(item, index) in basket">
+          <div class="row">
+            <div class="col-2"> {{ item.name }} </div>
+            <div class="col-6"> {{ item.description }} </div>
+            <div class="col-1 ml-auto"> {{ item.price }} </div>
+            <div class="col-2 ml-auto text-end">
+              <div id="deleteFromBasket" @click="confirm(deleteFromBasket(index))" class="btn-xs">
                 <i class="fa fa-trash icons" aria-hidden="true"></i>
               </div>
             </div>
           </div>
-
-        {{ item.name  }}
-        <br>
-        {{ item.description  }}
-        <br>
-        {{ item.price  }}
         </li>
       </ul>
       <router-link class="btn btn-secondary mr-5" to="/">Weiter einkaufen</router-link>

@@ -41,8 +41,15 @@ export default {
           </div>
           </div>
           <div class="place-bottom">
-          <router-link class="btn btn-primary" to="/basket">To Shopping Basked</router-link>
+            <router-link class="btn btn-primary" to="/basket">To Shopping Basked</router-link>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
           </div>
+          
       </div>`,
   };
   

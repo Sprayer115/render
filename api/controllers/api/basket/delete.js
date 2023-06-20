@@ -10,7 +10,7 @@ module.exports = {
     inputs: {
       index: {
         description: 'Index of article in basket',
-        type: 'number',
+        type: 'string',
         required: true
       },
     },
