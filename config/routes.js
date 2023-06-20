@@ -104,6 +104,7 @@ module.exports.routes = {
 
   'GET /api/basket': {  action:'api/basket/get' },
   'POST /api/basket': {  action:'api/basket/add' },
+  'DELETE /api/basket': {  action:'api/basket/delete' },
 
   'GET /api/category': {  action:'api/category/index' },
 

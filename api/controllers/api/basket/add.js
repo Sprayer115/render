@@ -23,7 +23,7 @@ module.exports = {
 
   fn: async function (inputs) {
     console.log("Add Element to basket......")
-    let article = await Article.findOne({ id: inputs.id })
+    let article = await Article.findOne({ id: inputs.id }).populate('variant');
     if (!this.req.session.basket) {
       console.log("Create new basket...")
       this.req.session.basket = [];
