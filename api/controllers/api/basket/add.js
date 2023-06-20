@@ -23,12 +23,19 @@ module.exports = {
 
   fn: async function (inputs) {
     console.log("Add Element to basket......")
-    let article = await Article.findOne({ id: inputs.id }).populate('articleVariants');
+    let size = await ArticleVariantSize.findOne({ id: inputs.id }).populate('variant');
+    let article = await Article.findOne({id: size.variant.article});
+    sails.log.debug(article);
+    size.image_path = size.variant.image_path;
+    size.color = size.variant.name;
+    size.name = article.name;
+    size.description = article.description;
+    size.price = article.price;
     if (!this.req.session.basket) {
       console.log("Create new basket...")
       this.req.session.basket = [];
     } 
-    this.req.session.basket.push(article);
+    this.req.session.basket.push(size);
     // All done.
     return;
 
