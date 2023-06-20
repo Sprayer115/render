@@ -34,11 +34,15 @@ export default {
           <div class="my-5" v-for="category in this.categories">
             <span class="h3">{{ category.name }}</span>
             <hr>
+            <div class="float-container" style="width: 100%; display: table;">
               <div class="mt-2" v-for="article in category.articles">
                 <overview :article='article' @order="order"></overview>
               </div>
           </div>
+          </div>
+          <div class="place-bottom">
           <router-link class="btn btn-primary" to="/basket">To Shopping Basked</router-link>
+          </div>
       </div>`,
   };
   
