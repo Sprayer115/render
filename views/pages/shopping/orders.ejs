@@ -1,0 +1,28 @@
+<div id="app">
+    <router-view></router-view>
+</div>
+<script type="module">
+
+    import orders from "/vue/orders.js";
+    import detail from "/vue/detailedOrder.js";
+
+
+    const routes = [
+        { path: '/', component: orders },
+        { path: '/detail/:id', component: detail, name: 'detail' },
+
+    ]
+
+    const router = VueRouter.createRouter({
+        history: VueRouter.createWebHashHistory(),
+        routes, 
+    })
+
+    // 5. Create and mount the root instance.
+    const app = Vue.createApp({});
+    const vuetify = Vuetify.createVuetify();
+    app.component("orders", orders);
+    app.use(router);
+    app.use(vuetify);
+    app.mount('#app');
+</script>

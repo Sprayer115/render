@@ -3,21 +3,22 @@
 </div>
 <script type="module">
 
-    import overview from "/vue/overview.js";
+    import Shirt from "/vue/shirt.js";
     import Basket from "/vue/basket.js";
     import Address from "/vue/address.js";
     import Checkout from "/vue/checkout.js";
     import Confirmation from "/vue/confirmation.js";
-    import shirtcomponent from '/vue/shirt.js'
+    import overviewcomponent from '/vue/overview.js'
 
 
     const routes = [
-        { path: '/', component: overview },
+        { path: '/', component: Shirt },
         { path: '/basket', component: Basket },
         { path: '/address', component: Address },
         { path: '/checkout', component: Checkout },
         { path: '/confirmation', component: Confirmation },
     ]
+
 
     const router = VueRouter.createRouter({
         history: VueRouter.createWebHashHistory(),
@@ -33,7 +34,7 @@
     // 5. Create and mount the root instance.
     const app = Vue.createApp({});
     const vuetify = Vuetify.createVuetify();
-    app.component("shirt", shirtcomponent);
+    app.component("overview", overviewcomponent);
     app.use(router);
     app.use(vuetify);
     app.mount('#app');
