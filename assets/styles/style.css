@@ -45,6 +45,7 @@
         display: flex;
         align-items: center;
         z-index: 2;
+        width: 100%;
     }
     .main {
         flex-grow: 1; /* Allow main content to grow and fill remaining space */
@@ -52,6 +53,12 @@
         padding-bottom:60px;
     }
     .footer-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        padding-left: 2em;
+        align-items: center;
     }
     .head-bar {
         background-color: #B4D2E7;
@@ -68,6 +75,13 @@
         display: none;
     }
 
+}
+
+@media screen and (min-width: 520px) {
+    .footer-text {
+        flex-direction: row;
+        width: 100%;
+    }
 }
 
 
@@ -169,8 +183,7 @@
     .head-bar {
         font-weight: bolder !important;
     }
-    .footer-text {
-    }
+    
     .footer-text li {
         display: inline-block;
         float: Left;
