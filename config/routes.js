@@ -56,6 +56,7 @@ module.exports.routes = {
   '/': { view: 'pages/home' },
   'GET /admin/article/new': { view: 'pages/admin/article/new' },//C
   'GET /homeShortSleeve': { view: 'pages/shortSleeve/homeShortSleeve'},
+  'GET /about-us': { view: 'pages/about_us'},
   //'GET /homeShortSleeve': { controller: 'ArticleController', action: 'article'},
 
 

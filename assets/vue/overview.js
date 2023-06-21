@@ -43,8 +43,9 @@ export default {
                 </p>
               </div>
               <div class="col-2 text-end"> 
-                <select class="" v-model="selected_size">
+                <select class="dropdown-menu-dark" v-model="selected_size">
                   <option value="-1">Größe Wählen</option> 
+                  <v-select v-model="location" :items="article.variantSizes" label="size"></v-select>
                   <option v-for="size in article.variantSizes" :key="size.id" :value="size.id" :disabled="size.stock < 1">
                     {{ size.name }}
                   </option>

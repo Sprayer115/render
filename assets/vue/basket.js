@@ -44,6 +44,7 @@ export default {
       <ul class="list-group mb-4">
         <li class="list-group-item list-group-item-action active">
           <div class="row">
+            <div class="col-3 ml-auto">Bild</div>
             <div class="col-2"> Artikel</div>
             <div class="col-6">Beschreibung</div>
             <div class="col-1 ml-auto">Preis</div>
@@ -54,9 +55,11 @@ export default {
         </li>
         <li class="list-group-item" v-for="(item, index) in basket">
           <div class="row">
+            
             <div class="col-2"> {{ item.name }} </div>
             <div class="col-6"> {{ item.description }} </div>
             <div class="col-1 ml-auto"> {{ item.price }} </div>
+
             <div class="col-2 ml-auto text-end">
               <div id="deleteFromBasket" @click="confirm(deleteFromBasket(index))" class="btn-xs">
                 <i class="fa fa-trash icons" aria-hidden="true"></i>
