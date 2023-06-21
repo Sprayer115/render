@@ -18,10 +18,16 @@
         { path: '/checkout', component: Checkout },
         { path: '/confirmation', component: Confirmation },
     ]
-    
+
     const router = VueRouter.createRouter({
         history: VueRouter.createWebHashHistory(),
         routes, 
+        parseQuery: (query) => {
+            // Custom logic for parsing query parameters
+            return {
+                categories: query.categories, // Replace with your actual parameter name
+            };
+        },
     })
 
     // 5. Create and mount the root instance.
