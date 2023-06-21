@@ -26,8 +26,6 @@ module.exports.routes = {
   //'GET /account/address/:id/destroy':  'AddressController.destroy',
   'GET /account/address/new':  {view: 'pages/account/address-new'},
 
-  'GET /account/order':       'OrderController.find',
-  'GET /account/order/:id':   'OrderController.edit',
 
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
@@ -100,8 +98,12 @@ module.exports.routes = {
 
   'GET /api/category': { action: 'api/category/index'},
   'GET /api/address': { action: 'api/address/index'},
+  'GET /api/orderHistory': {action: 'api/orders/history'},
+  'POST /api/getOrder/': {action: 'api/orders/get-order'},
+  'POST /api/storno/': {action: 'api/orders/storno'},
 
   'GET /vArticleShopping': {  action: 'view-article-shopping' },
+  'GET /vOrders': {  action: 'view-users-orders' },
 
   'GET /api/basket': {  action:'api/basket/get' },
   'POST /api/basket': {  action:'api/basket/add' },

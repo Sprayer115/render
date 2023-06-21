@@ -72,6 +72,9 @@ module.exports = {
     sails.log.debug("searching....")
     // possible filters : price and custom
     let params = req.allParams();
+    if(params.price == '') {
+      params.price = 99999;
+    }
     let shirts = await Article.find({
         where : {price: { '<=': params.price},
         or : [

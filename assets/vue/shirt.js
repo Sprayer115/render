@@ -6,7 +6,7 @@ export default {
       };
     },
     mounted() {
-      console.log(this.$route.query)
+      console.log(this.$route.query.categories)
       let url = new URL(origin + "/api/category");
       fetch(url)
         .then((res) => res.json())
