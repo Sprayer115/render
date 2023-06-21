@@ -33,7 +33,15 @@ export default {
       <div class="h2">Bestellung</div>
 
       <ul class="list-group mb-4">                
-        <li class="list-group-item" v-for="item in basket">{{ item.name }}</li>
+      </li>
+      <li class="list-group-item" v-for="(item, index) in basket">
+        <div class="row">
+          <div class="col-3"> 
+          <div class="basket-picture">  <img :src="'https://wetebucket.s3.us-west-2.amazonaws.com/'+item.image_path" class="center"> </div></div>
+          <div class="col-2"> {{ item.name }} </div>
+          <div class="col-1 ml-auto"> {{ item.price }} </div>
+        </div>
+      </li>
       </ul>
 
       <div class="h2">Lieferdaten</div>

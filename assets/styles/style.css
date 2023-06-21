@@ -202,12 +202,14 @@
         flex-basis: 16.6667%;
     }
     .card {
+        position: static;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         width: 250px;
         height: 400px;
         text-align: left;
         font-family: arial;
         display: table;
+        margin-bottom: 40px;
       }
       
       .price {
@@ -437,4 +439,8 @@ input{
     color: white;
     transform: rotateY(180deg);
     height: 300px;
+  }
+  .basket-picture{
+    width: 100px;
+    height: auto;
   }
