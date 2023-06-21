@@ -52,6 +52,9 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/home' },
+  '/impressum': { view: 'pages/impressum' },
+  '/agb': { view: 'pages/agb' },
+  '/faq': { view: 'pages/faq' },
   'GET /admin/article/new': { view: 'pages/admin/article/new' },//C
   'GET /homeShortSleeve': { view: 'pages/shortSleeve/homeShortSleeve'},
   'GET /about-us': { view: 'pages/about_us'},
