@@ -55,7 +55,7 @@ export default {
         </li>
         <li class="list-group-item" v-for="(item, index) in basket">
           <div class="row">
-            
+            <div class="col-2"> <img :src="'https://wetebucket.s3.us-west-2.amazonaws.com/'+item.image_path" class="center"> </div>
             <div class="col-2"> {{ item.name }} </div>
             <div class="col-6"> {{ item.description }} </div>
             <div class="col-1 ml-auto"> {{ item.price }} </div>

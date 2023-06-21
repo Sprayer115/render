@@ -51,7 +51,7 @@ export default {
             });
             console.log(data);
             this.addresses = data;
-            console.log(" test", this.addresses[0].id)
+            
           });
       }
     },
@@ -67,7 +67,9 @@ export default {
               label="Wählen Sie eine Adresse aus"
             >
             </v-select>
-            <div class="btn btn-primary" href="/account/address/new">Adressen verwalten</div>
+            <a href="/account/address/new"> 
+              <div class="btn btn-primary"  >Adressen verwalten</div>
+            </a>
           </v-form>
         </v-sheet>
   
