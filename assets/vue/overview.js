@@ -20,6 +20,9 @@ export default {
           <div v-if="article.image_path != null">
           <img :src="'https://wetebucket.s3.us-west-2.amazonaws.com/'+article.image_path" class="center">
           </div>
+          <div v-else>
+          <img src="/images/shirtPics/rosa.jpg" class="center">
+          </div>
           <br>
         <div class="h4" style="text-align:center">{{ article.name }}</div>
           <div class="dialog" v-if="dialog">
