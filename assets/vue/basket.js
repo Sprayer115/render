@@ -46,7 +46,7 @@ export default {
           <div class="row">
             <div class="col-3 ml-auto font-size-mobile">Bild</div>
             <div class="col-2 font-size-mobile"> Artikel</div>
-            <div class="col-2 font-size-mobile">Beschreibung</div>
+            <div class="col-4 font-size-mobile">Beschreibung</div>
             <div class="col-1 font-size-mobile">Preis</div>
             <div class="col-2 ml-auto text-end">
             </div>
