@@ -38,8 +38,8 @@ export default {
         <div class="row">
           <div class="col-3"> 
           <div class="basket-picture">  <img :src="'https://wetebucket.s3.us-west-2.amazonaws.com/'+item.image_path" class="center"> </div></div>
-          <div class="col-2"> {{ item.name }} </div>
-          <div class="col-1 ml-auto"> {{ item.price }} </div>
+          <div class="col-2 font-size-mobile"> {{ item.name }} </div>
+          <div class="col-1 ml-auto font-size-mobile"> {{ item.price }} </div>
         </div>
       </li>
       </ul>
