@@ -44,7 +44,7 @@ export default {
       <ul class="list-group mb-4">
         <li class="list-group-item list-group-item-action active">
           <div class="row">
-            <div class="col-3 ml-auto font-size-mobile">Bild</div>
+            <div class="col-3 font-size-mobile">Bild</div>
             <div class="col-2 font-size-mobile"> Artikel</div>
             <div class="col-4 font-size-mobile">Beschreibung</div>
             <div class="col-1 font-size-mobile">Preis</div>
@@ -58,7 +58,7 @@ export default {
             <div class="col-3 font-size-mobile"> 
             <div class="basket-picture">  <img :src="'https://wetebucket.s3.us-west-2.amazonaws.com/'+item.image_path" class="center"> </div></div>
             <div class="col-2 font-size-mobile"> {{ item.name }} </div>
-            <div class="col-2 font-size-mobile"> {{ item.description }} </div>
+            <div class="col-4 font-size-mobile"> {{ item.description }} </div>
             <div class="col-1 ml-auto font-size-mobile"> {{ item.price }} </div>
 
             <div class="col-2 ml-auto text-end">
