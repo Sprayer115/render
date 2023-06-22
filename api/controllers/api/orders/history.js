@@ -47,8 +47,8 @@ module.exports = {
             sails.log.debug(orders, "orders");
             return orders;
         } catch (error) {
-            sails.log.debug(error);
-            return res.serverError();
+            sails.log.error(error);
+            return error;
         }
     }
   };
