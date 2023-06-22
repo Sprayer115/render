@@ -59,7 +59,7 @@ export default {
             <div class="basket-picture">  <img :src="'https://wetebucket.s3.us-west-2.amazonaws.com/'+item.image_path" class="center"> </div></div>
             <div class="col-2 font-size-mobile"> {{ item.name }} </div>
             <div class="col-4 font-size-mobile"> {{ item.description }} </div>
-            <div class="col-1 ml-auto font-size-mobile"> {{ item.price }} </div>
+            <div class="col-1 ml-auto font-size-mobile"> {{ item.price }} &euro;</div>
 
             <div class="col-2 ml-auto text-end">
               <div id="deleteFromBasket" @click="confirm(deleteFromBasket(index))" class="btn-xs">

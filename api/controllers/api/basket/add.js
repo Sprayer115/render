@@ -27,6 +27,7 @@ module.exports = {
     let article = await Article.findOne({id: size.variant.article});
     sails.log.debug(article);
     size.image_path = size.variant.image_path;
+    size.size = size.name;
     size.color = size.variant.name;
     size.name = article.name;
     size.description = article.description;

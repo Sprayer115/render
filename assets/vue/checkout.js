@@ -3,7 +3,8 @@ export default {
       return {
         name: "",
         address: "",
-        basket: []
+        basket: [],
+        total: 0,
       };
     },
     methods: {
@@ -19,31 +20,35 @@ export default {
         .then(this.$router.push("/confirmation"))
       }
     },  
-    created() {
+    async created() {
         let url = new URL(origin + '/api/basket');
-        fetch(url)
+        await fetch(url)
         .then(res => res.json())
         .then(data => {
           this.basket = data.basket,
           this.address = data.address;
         })
+        console.log("foreaching")
+        this.basket.forEach(element => {
+          console.log(element);
+          this.total += element.price;
+        });
     },
     template: `
     <div class="container">
       <div class="h2">Bestellung</div>
 
       <ul class="list-group mb-4">                
-      </li>
       <li class="list-group-item" v-for="(item, index) in basket">
         <div class="row">
           <div class="col-3"> 
           <div class="basket-picture">  <img :src="'https://wetebucket.s3.us-west-2.amazonaws.com/'+item.image_path" class="center"> </div></div>
-          <div class="col-2 font-size-mobile"> {{ item.name }} </div>
-          <div class="col-1 ml-auto font-size-mobile"> {{ item.price }} </div>
+          <div class="col-2 font-size-mobile"> {{ item.name }}  {{ item.color }} / {{ item.size }} </div>
+          <div class="col-1 ml-auto font-size-mobile"> {{ item.price }} &euro;</div>
         </div>
       </li>
       </ul>
-
+      <div class="text-end"> Gesamt:     {{ total }} &euro;</div>
       <div class="h2">Lieferdaten</div>
         <div class="h4">
             Name: {{ address.firstname + " " + address.lastname }}

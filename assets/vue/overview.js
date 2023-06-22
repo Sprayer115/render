@@ -49,7 +49,7 @@ export default {
                   <option v-for="size in article.variantSizes" :key="size.id" :value="size.id" :disabled="size.stock < 1">
                     {{ size.name }}
                   </option>
-                </select>
+                </select> 
               </div>
             </div>
           <br>
