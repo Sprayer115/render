@@ -15,7 +15,7 @@ export default {
   <div class="mt-2">
 
 
-      <div class="float-child" style="width: 200px; display: table-cell;">
+      <div class="float-child" style="display: table-cell;">
         <div class="card">
           <div v-if="article.image_path != null">
           <img :src="'https://wetebucket.s3.us-west-2.amazonaws.com/'+article.image_path" class="center">
