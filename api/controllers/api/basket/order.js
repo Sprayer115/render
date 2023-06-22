@@ -54,6 +54,7 @@ module.exports = {
         await ArticleVariantSize.updateOne({id: article.id}).set({stock: s.stock-1});
         console.log(a)
       };
+      this.req.session.basket = [];
       return true;
     } catch (error) {
         console.log(error);
