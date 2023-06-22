@@ -37,12 +37,12 @@ export default {
           <br>
           <div>
             <div class="row">
-              <div class="col-4 text-start"> 
-                <p class="article-text-desc">
-                <span class="article-text-desc"> {{ article.price }} &euro;</span>
+              <div class="col-4 ml-10"> 
+                <p class="">
+                <span style="text-align: center;"> {{ article.price }} &euro;</span>
                 </p>
               </div>
-              <div class="col-2 text-end"> 
+              <div class="col-4"> 
                 <select class="dropdown-menu-dark" v-model="selected_size">
                   <option value="-1">Größe Wählen</option> 
                   <v-select v-model="location" :items="article.variantSizes" label="size"></v-select>
