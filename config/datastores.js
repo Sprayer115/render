@@ -39,7 +39,10 @@ module.exports.datastores = {
     port: 33061,
     user: 'user14_prod',
     password: '_100116',
-    database: 't_shirt_shirt_prod'
+    database: 't_shirt_shirt_prod',
+    options: {
+      queryLogging: true
+    }
     
 
     /***************************************************************************

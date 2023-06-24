@@ -8,9 +8,9 @@ module.exports = {
   
   
     inputs: {
-      filter: {
+      categories: {
         description: 'The id of an category',
-        type: 'string',
+        type: 'json',
         required: false
       }
     },
@@ -23,9 +23,11 @@ module.exports = {
   
     fn: async function (inputs) {
       // 11.06
+      sails.log.debug(inputs.categories);
       sails.log.debug("category requested");
-      if(inputs.filter > -1){
-        categories = await Category.find({filter: { like: inputs.filter}});
+      if(inputs.categories.length > 0){
+        sails.log.debug(inputs.categories.toString(), "like")
+        categories = await Category.find({filter: { like: '%' + inputs.categories + '%' }});
       }
       else {
         categories = await Category.find();
@@ -41,13 +43,13 @@ module.exports = {
         });
         resolve();
       }); */
-
+      sails.log.debug(categories);
       for(category in categories) {
         variants = [];
         category = categories[category];
-        articles = await Article.find({
-          where: { filter: { like: category.filter } }
-        }).populate('articleVariants');
+        sails.log.debug(category.filter);
+        articles = await Article.find({ filter: { like: '%' + category.filter + '%'}}).populate('articleVariants');
+        sails.log.debug(articles);
         for( article in articles) {
           for( articleVariant in articles[article].articleVariants) {
             variant = await ArticleVariant.findOne({id: articles[article].articleVariants[articleVariant].id}).populate('variantSizes')

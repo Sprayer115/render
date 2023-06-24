@@ -6,9 +6,15 @@ export default {
       };
     },
     mounted() {
-      console.log(this.$route.query.categories)
+      console.log(this.$route)
+      const categories = JSON.parse(new URL(window.location.href).search.substring(1).replaceAll('%27', '"'));
       let url = new URL(origin + "/api/category");
-      fetch(url)
+      let data = new FormData();
+      data.append('categories', categories);
+      fetch(url, {
+          method: "POST",
+          body: data,
+        })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);

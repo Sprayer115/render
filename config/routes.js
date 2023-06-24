@@ -112,7 +112,7 @@ module.exports.routes = {
   'POST /api/basket': {  action:'api/basket/add' },
   'DELETE /api/basket': {  action:'api/basket/delete' },
 
-  'GET /api/category': {  action:'api/category/index' },
+  'POST /api/category': {  action:'api/category/index' },
 
 
   'POST /api/address': {  action:'api/basket/address' },
